@@ -2,32 +2,54 @@ using UnityEngine;
 
 public class FlyingIngredient : MonoBehaviour
 {
-    public int movementType = 0;
-    public float speed = 1f;
-    public float radius = 1f;
+    [Header("Float Settings")]
+    public float speed = 0.5f;
+    public float amplitude = 0.1f;
 
-    Vector3 startPos;
+    private bool isGrabbed = false;
+
+    private Vector3 startPos;
+
+    private float offsetX;
+    private float offsetY;
+    private float offsetZ;
 
     void Start()
     {
+        // Randomize movement so each object behaves differently
+        offsetX = Random.Range(0f, 100f);
+        offsetY = Random.Range(0f, 100f);
+        offsetZ = Random.Range(0f, 100f);
+
         startPos = transform.position;
     }
 
     void Update()
     {
+        // Stop animation while grabbed
+        if (isGrabbed) return;
+
         float t = Time.time * speed;
 
-        if (movementType == 0) // circle
-        {
-            transform.position = startPos + new Vector3(Mathf.Cos(t), 0, Mathf.Sin(t)) * radius;
-        }
-        else if (movementType == 1) // up down
-        {
-            transform.position = startPos + new Vector3(0, Mathf.Sin(t), 0);
-        }
-        else if (movementType == 2) // random wave
-        {
-            transform.position = startPos + new Vector3(Mathf.Sin(t), Mathf.Cos(t), Mathf.Sin(t * 2)) * 0.7f;
-        }
+        // Smooth floating motion
+        Vector3 offset = new Vector3(
+            Mathf.Sin(t + offsetX),
+            Mathf.Cos(t + offsetY),
+            Mathf.Sin(t + offsetZ)
+        ) * amplitude;
+
+        transform.position = startPos + offset;
+    }
+
+    // Called by OVRGrabbable
+    public void OnGrabBegin()
+    {
+        isGrabbed = true;
+    }
+
+    // Called by OVRGrabbable
+    public void OnGrabEnd()
+    {
+        isGrabbed = false;
     }
 }
