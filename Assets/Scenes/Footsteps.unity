@@ -10810,7 +10810,7 @@ MonoBehaviour:
   - {fileID: 1456796076}
   - {fileID: 2014795177}
   ingredientTarget: {fileID: 119305012}
-  passthroughLayer: {fileID: 0}
+  passthroughLayer: {fileID: 1635073593}
   normalOpacity: 1
   darkOpacity: 0.2
   glowColor: {r: 0, g: 1, b: 1, a: 1}
