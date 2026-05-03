@@ -26,6 +26,7 @@ public enum StationType
 
 public enum PlayerRole
 {
+    Unassigned,
     Kitchen,
     Front
 }
