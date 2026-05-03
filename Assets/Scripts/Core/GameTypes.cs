@@ -9,6 +9,21 @@ public enum GamePhase
     Finished
 }
 
+public enum ZoneType
+{
+    Kitchen,
+    Front,
+    ServicePass
+}
+
+public enum StationType
+{
+    Ingredient,
+    Prep,
+    Cooking,
+    Delivery
+}
+
 public enum PlayerRole
 {
     Kitchen,
