@@ -438,7 +438,7 @@ MonoBehaviour:
   - {fileID: -8112646220259433157}
   customLoaderName: 
   m_renderMode: 1
-  m_latencyOptimization: 0
+  m_latencyOptimization: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
     m_List: 00000000
@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Name: WebGL
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
-  - {fileID: 5527287168411345219}
+  - {fileID: 142651947244817675}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
