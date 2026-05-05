@@ -1,9 +1,10 @@
-using UnityEngine;
-using TMPro; // Use UnityEngine.UI if you're using normal Text
+﻿using UnityEngine;
+using TMPro;
 
 public class MRStopwatch : MonoBehaviour
 {
-    public TextMeshProUGUI timeText; // Assign your UI text here
+    public TextMeshPro timeText;     // 3D text showing time (00:00)
+    public TextMeshPro buttonText;   // Text on the button (Start/Stop)
 
     private float elapsedTime = 0f;
     private bool isRunning = false;
@@ -22,27 +23,30 @@ public class MRStopwatch : MonoBehaviour
         int minutes = Mathf.FloorToInt(elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(elapsedTime % 60f);
 
-        // Format: 02:37
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    // ?? Call this from your button (Start)
-    public void StartStopwatch()
+    // 🔘 Connect this to your MR button press event
+    public void ToggleStopwatch()
     {
-        isRunning = true;
+        isRunning = !isRunning;
+
+        if (isRunning)
+        {
+            buttonText.text = "Stop";
+        }
+        else
+        {
+            buttonText.text = "Start";
+        }
     }
 
-    // ?? Optional Pause
-    public void StopStopwatch()
-    {
-        isRunning = false;
-    }
-
-    // Reset
+    // (Optional) Reset function
     public void ResetStopwatch()
     {
         isRunning = false;
         elapsedTime = 0f;
-        UpdateDisplay();
+        timeText.text = "00:00";
+        buttonText.text = "Start";
     }
 }
