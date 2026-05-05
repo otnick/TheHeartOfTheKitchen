@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/RestaurantGameplay.unity
+    guid: e6882bfe42d190345805d69c09f65983
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Esma/Esma.unity
     guid: 65da12775d85a204e9b4eb3565e48b3f
   m_configObjects:
