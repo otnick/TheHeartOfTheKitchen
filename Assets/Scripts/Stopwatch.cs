@@ -3,11 +3,17 @@ using TMPro;
 
 public class MRStopwatch : MonoBehaviour
 {
-    public TextMeshPro timeText;     // 3D text showing time (00:00)
-    public TextMeshPro buttonText;   // Text on the button (Start/Stop)
+    public TextMeshPro timeText;
 
     private float elapsedTime = 0f;
     private bool isRunning = false;
+    public Color normalColor = Color.white;
+    public Color warningColor = Color.red;
+
+    void Start()
+    {
+        UpdateDisplay(); // show 00:00 at start
+    }
 
     void Update()
     {
@@ -24,29 +30,34 @@ public class MRStopwatch : MonoBehaviour
         int seconds = Mathf.FloorToInt(elapsedTime % 60f);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
-
-    // 🔘 Connect this to your MR button press event
-    public void ToggleStopwatch()
-    {
-        isRunning = !isRunning;
-
-        if (isRunning)
+	if (elapsedTime >= 120f)
         {
-            buttonText.text = "Stop";
+            timeText.color = warningColor;
         }
         else
         {
-            buttonText.text = "Start";
+            timeText.color = normalColor;
         }
     }
 
-    // (Optional) Reset function
-    public void ResetStopwatch()
+    // Start Button
+    public void StartTimer()
+    {
+        isRunning = true;
+    }
+
+    // Stop Button
+    public void StopTimer()
+    {
+        isRunning = false;
+    }
+
+    // Reset Button
+    public void ResetTimer()
     {
         isRunning = false;
         elapsedTime = 0f;
-        timeText.text = "00:00";
-        buttonText.text = "Start";
+        UpdateDisplay();
+	timeText.color = normalColor;
     }
 }
