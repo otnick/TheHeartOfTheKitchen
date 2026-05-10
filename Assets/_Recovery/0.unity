@@ -293,7 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07eb9c79b37702e4ab45038aca017a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MRStopwatch
-  timeText: {fileID: 1684950324}
+  timeText: {fileID: 0}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  warningColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &98902405
 PrefabInstance:
   m_ObjectHideFlags: 0
