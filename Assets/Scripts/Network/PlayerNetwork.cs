@@ -5,6 +5,6 @@ public class PlayerNetwork : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.All, HostMode = RpcHostMode.SourceIsHostPlayer)]
     public void RPC_ToggleLights(bool turnLightsOff)
     {
-        FindObjectOfType<LightPuzzleController>()?.ApplyState(turnLightsOff);
+        FindAnyObjectByType<LightPuzzleController>()?.ApplyState(turnLightsOff);
     }
 }

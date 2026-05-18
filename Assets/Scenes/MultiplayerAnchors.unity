@@ -1927,6 +1927,51 @@ Transform:
   - {fileID: 408462036}
   m_Father: {fileID: 1676204091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &223585680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 223585681}
+  - component: {fileID: 223585683}
+  m_Layer: 0
+  m_Name: ColocationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &223585681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223585680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 744812956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223585683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223585680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d0df60f5cc5404baabef0b5fb76818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColocationManager
+  cameraRig: {fileID: 1243393915}
 --- !u!1 &223844200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,7 +2746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basis: 0
-  AnchorPrefab: {fileID: 2013907099}
+  AnchorPrefab: {fileID: 3105173346702953323, guid: d675ca738ca229f41a80c9105cacfb75, type: 3}
 --- !u!114 &448692461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,7 +2761,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ColocationReadyCallbacks:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223585683}
+        m_TargetAssemblyTypeName: ColocationManager, Assembly-CSharp
+        m_MethodName: OnColocationReady
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   DebuggingOptions:
     visualizeAlignmentAnchor: 1
     enableVerboseLogging: 0
@@ -5736,6 +5793,7 @@ Transform:
   - {fileID: 499312205}
   - {fileID: 1911315436}
   - {fileID: 448692463}
+  - {fileID: 223585681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &756462945
@@ -12216,8 +12274,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718583904}
-  - component: {fileID: 1718583906}
-  - component: {fileID: 1718583905}
   m_Layer: 0
   m_Name: Players
   m_TagString: Untagged
@@ -12242,37 +12298,6 @@ Transform:
   - {fileID: 77412943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1718583905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718583903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkObject
-  SortKey: 2676193512
-  ObjectInterest: 1
-  Flags: 262145
-  NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 1718583906}
-  ForceRemoteRenderTimeframe: 0
---- !u!114 &1718583906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718583903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b56678bbc0a764884610e4f02a8a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerNetwork
 --- !u!1 &1733278848
 GameObject:
   m_ObjectHideFlags: 0
@@ -12282,6 +12307,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733278849}
+  - component: {fileID: 1733278851}
+  - component: {fileID: 1733278850}
   m_Layer: 0
   m_Name: Footsteps
   m_TagString: Untagged
@@ -12309,6 +12336,37 @@ Transform:
   - {fileID: 1082017095}
   m_Father: {fileID: 1040960901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733278850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733278848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkObject
+  SortKey: 3251697666
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 1733278851}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &1733278851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733278848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b56678bbc0a764884610e4f02a8a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerNetwork
 --- !u!1 &1750280002
 GameObject:
   m_ObjectHideFlags: 0
@@ -14065,7 +14123,7 @@ Transform:
   m_GameObject: {fileID: 2013907099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.68, y: -0.30702, z: 1.42}
+  m_LocalPosition: {x: 0.68, y: -0.247, z: 2.181}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
