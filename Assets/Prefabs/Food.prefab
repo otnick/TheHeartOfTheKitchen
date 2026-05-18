@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 85443dd0-0bd8-457a-95e6-7516692f1f96
+  instanceId: b464e320-164e-400b-b1da-05ba08988c44
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -346,6 +346,8 @@ GameObject:
   - component: {fileID: 1438644568551097777}
   - component: {fileID: 1892600918376492419}
   - component: {fileID: 3028690289562467384}
+  - component: {fileID: 946694056149202993}
+  - component: {fileID: 5382406560739798489}
   m_Layer: 0
   m_Name: Food
   m_TagString: Food
@@ -399,7 +401,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6872901807826945667}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 0.01
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -458,3 +460,33 @@ MonoBehaviour:
   selectedColor: {r: 0, g: 1, b: 0, a: 1}
   transitionTime: 0.5
   objectRenderer: {fileID: 1101143684655995834}
+--- !u!114 &946694056149202993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872901807826945667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4a99f1c7629c94fa17872094496a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodAcceleration
+--- !u!114 &5382406560739798489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872901807826945667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fusion.Runtime.dll::Fusion.NetworkObject
+  SortKey: 4006407727
+  ObjectInterest: 1
+  Flags: 786433
+  NestedObjects: []
+  NetworkedBehaviours: []
+  ForceRemoteRenderTimeframe: 0
