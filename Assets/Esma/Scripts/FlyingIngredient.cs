@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class FlyingIngredient : MonoBehaviour
 {
-    [Header("Float Settings")]
-    public float speed = 0.5f;
-    public float amplitude = 0.1f;
+    public float speed = 0.7f;
+    public float amplitude = 0.2f;
 
-    private bool isGrabbed = false;
+    public GameObject wingObject;
 
     private Vector3 startPos;
 
@@ -14,24 +13,36 @@ public class FlyingIngredient : MonoBehaviour
     private float offsetY;
     private float offsetZ;
 
+    private Rigidbody rb;
+
+    private bool inBowl = false;
+
     void Start()
     {
-        // Randomize movement so each object behaves differently
         offsetX = Random.Range(0f, 100f);
         offsetY = Random.Range(0f, 100f);
         offsetZ = Random.Range(0f, 100f);
 
         startPos = transform.position;
+
+        rb = GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.useGravity = false;
+            rb.isKinematic = true; // IMPORTANT FIX
+        }
+
+        if (wingObject != null)
+            wingObject.SetActive(true);
     }
 
     void Update()
     {
-        // Stop animation while grabbed
-        if (isGrabbed) return;
+        if (inBowl) return;
 
         float t = Time.time * speed;
 
-        // Smooth floating motion
         Vector3 offset = new Vector3(
             Mathf.Sin(t + offsetX),
             Mathf.Cos(t + offsetY),
@@ -41,15 +52,26 @@ public class FlyingIngredient : MonoBehaviour
         transform.position = startPos + offset;
     }
 
-    // Called by OVRGrabbable
-    public void OnGrabBegin()
+    private void OnTriggerEnter(Collider other)
     {
-        isGrabbed = true;
+        if (other.CompareTag("Bowl"))
+        {
+            EnterBowl();
+        }
     }
 
-    // Called by OVRGrabbable
-    public void OnGrabEnd()
+    void EnterBowl()
     {
-        isGrabbed = false;
+        inBowl = true;
+
+        // stop floating system completely
+        rb.isKinematic = false;
+        rb.useGravity = true;
+        rb.WakeUp();
+
+        if (wingObject != null)
+            wingObject.SetActive(false);
+
+        transform.SetParent(null);
     }
 }

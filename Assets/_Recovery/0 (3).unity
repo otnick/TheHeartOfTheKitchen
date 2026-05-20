@@ -2217,8 +2217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ef328759cc14e4bac7cb2342c3a1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingIngredient
-  speed: 0.7
-  amplitude: 0.2
+  speed: 0.5
+  amplitude: 0.1
   wingObject: {fileID: 2065239132}
 --- !u!114 &145239193
 MonoBehaviour:
@@ -2274,7 +2274,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145239188}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -7673,8 +7673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ef328759cc14e4bac7cb2342c3a1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingIngredient
-  speed: 0.7
-  amplitude: 0.2
+  speed: 0.5
+  amplitude: 0.1
   wingObject: {fileID: 11606873}
 --- !u!114 &689520748
 MonoBehaviour:
@@ -7730,7 +7730,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689520743}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -8009,9 +8009,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4492821927860754639, guid: e65e0f5a23047e147be6dc32db77c4f1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 721152837}
-    - targetCorrespondingSourceObject: {fileID: 4492821927860754639, guid: e65e0f5a23047e147be6dc32db77c4f1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 721152832}
     - targetCorrespondingSourceObject: {fileID: 4492821927860754639, guid: e65e0f5a23047e147be6dc32db77c4f1, type: 3}
       insertIndex: -1
@@ -8105,7 +8102,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721152825}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -8165,27 +8162,6 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 1
   _handGrabPoses: []
---- !u!65 &721152837
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721152825}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.21515769, y: 0.15494487, z: 0.20602348}
-  m_Center: {x: -0.0016520806, y: 0.07718262, z: 0.0022225603}
 --- !u!1 &723873230
 GameObject:
   m_ObjectHideFlags: 0
@@ -9287,29 +9263,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 958223376}
     m_Modifications:
-    - target: {fileID: 4734858610313415681, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8313462898097801431, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
       propertyPath: m_Name
       value: Prop_Bowel_04
       objectReference: {fileID: 0}
-    - target: {fileID: 8313462898097801431, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
-      propertyPath: m_TagString
-      value: Bowl
-      objectReference: {fileID: 0}
     - target: {fileID: 8652693449036927597, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8652693449036927597, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8652693449036927597, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8652693449036927597, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9367,9 +9335,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8313462898097801431, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
       insertIndex: -1
       addedObject: {fileID: 871885824}
-    - targetCorrespondingSourceObject: {fileID: 8313462898097801431, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 871885829}
   m_SourcePrefab: {fileID: 100100000, guid: 4c5ebcc00a3ddca49802972d76f2a324, type: 3}
 --- !u!1 &871885820 stripped
 GameObject:
@@ -9407,7 +9372,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871885820}
   serializedVersion: 5
-  m_Mass: 3
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -9495,27 +9460,6 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 1
   _handGrabPoses: []
---- !u!65 &871885829
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871885820}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.2043345, y: 0.08288821, z: 0.20748669}
-  m_Center: {x: -0.000000019868216, y: 0.041444104, z: 0}
 --- !u!1001 &880646834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10183,7 +10127,6 @@ GameObject:
   - component: {fileID: 952704638}
   - component: {fileID: 952704637}
   - component: {fileID: 952704636}
-  - component: {fileID: 952704641}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -10357,34 +10300,6 @@ Transform:
   - {fileID: 139823429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &952704641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952704635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9067480af55f5874d8f613b16812f968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Oculus.Interaction::Oculus.Interaction.HandGrab.HandGrabInteractor
-  _activeState: {fileID: 0}
-  _interactableFilters: []
-  _candidateTiebreaker: {fileID: 0}
-  _maxIterationsPerFrame: 3
-  _data: {fileID: 0}
-  _hand: {fileID: 0}
-  _rigidbody: {fileID: 0}
-  _handGrabApi: {fileID: 0}
-  _supportedGrabTypes: 3
-  _hoverOnZeroStrength: 0
-  _grabOrigin: {fileID: 0}
-  _gripPoint: {fileID: 0}
-  _gripCollider: {fileID: 0}
-  _pinchPoint: {fileID: 0}
-  _pinchCollider: {fileID: 0}
-  _velocityCalculator: {fileID: 0}
 --- !u!1 &958223375
 GameObject:
   m_ObjectHideFlags: 0
@@ -10863,8 +10778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ef328759cc14e4bac7cb2342c3a1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingIngredient
-  speed: 0.7
-  amplitude: 0.2
+  speed: 0.5
+  amplitude: 0.1
   wingObject: {fileID: 2091977037}
 --- !u!114 &985585253
 MonoBehaviour:
@@ -10920,7 +10835,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985585248}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -12353,8 +12268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ef328759cc14e4bac7cb2342c3a1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingIngredient
-  speed: 0.7
-  amplitude: 0.2
+  speed: 0.5
+  amplitude: 0.1
   wingObject: {fileID: 1614426828}
 --- !u!114 &1147668486
 MonoBehaviour:
@@ -12410,7 +12325,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147668481}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -13044,7 +12959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 984354080134106425, guid: c2e00db6d2dfa42ac8d821db8d493a44, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8047981335285221976, guid: c2e00db6d2dfa42ac8d821db8d493a44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17710,8 +17625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ef328759cc14e4bac7cb2342c3a1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingIngredient
-  speed: 0.7
-  amplitude: 0.2
+  speed: 0.5
+  amplitude: 0.1
   wingObject: {fileID: 1305612253}
 --- !u!114 &1557052063
 MonoBehaviour:
@@ -17767,7 +17682,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557052058}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
