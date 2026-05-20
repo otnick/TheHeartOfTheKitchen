@@ -1,56 +1,79 @@
-﻿using UnityEngine;
+using UnityEngine;
+using Fusion;
+using Meta.XR.MultiplayerBlocks.Shared;
 
 public class ColocationManager : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private OVRCameraRig cameraRig; // drag [BuildingBlock] Camera Rig here
+    [SerializeField] private OVRCameraRig cameraRig;
+    [SerializeField] private Transform sceneRoot; // Parent of all scene geometry
 
     private bool _isAligned = false;
 
-    // ── Wire this to "Colocation Ready Callbacks" in the Colocation BB ───────
+    // Wire this to the ColocationController's "Colocation Ready" UnityEvent
     public void OnColocationReady()
     {
         if (_isAligned) return;
         _isAligned = true;
-
-        Debug.Log("[Colocation] Colocation ready — aligning camera...");
-        AlignCameraRig();
+        Debug.Log("[Colocation] OnColocationReady called — searching for anchor...");
+        AlignToAnchor();
     }
 
-    private void AlignCameraRig()
+    private void AlignToAnchor()
     {
+        // Find the shared spatial anchor (created/localized by the Building Block)
         OVRSpatialAnchor anchor = FindFirstObjectByType<OVRSpatialAnchor>();
 
         if (anchor == null)
         {
-            Debug.LogError("[Colocation] No OVRSpatialAnchor found in scene!");
+            Debug.LogError("[Colocation] No OVRSpatialAnchor found! Make sure SharedSpatialAnchorCore has created one.");
             return;
         }
 
-        if (cameraRig == null)
+        if (!anchor.Localized)
         {
-            Debug.LogError("[Colocation] CameraRig is not assigned!");
+            Debug.LogWarning("[Colocation] Anchor not yet localized — retrying in 0.5s...");
+            Invoke(nameof(AlignToAnchor), 0.5f);
             return;
         }
 
         Transform anchorT = anchor.transform;
-        // Instead of moving cameraRig.transform directly
-        // move its root parent
-        Transform rootToMove = cameraRig.transform.root; // or cameraRig.transform.parent
-        rootToMove.rotation = Quaternion.Inverse(anchorT.rotation) * rootToMove.rotation;
-        rootToMove.position -= anchorT.position;
+        Debug.Log($"[Colocation] Aligning to anchor at {anchorT.position}, rot {anchorT.rotation.eulerAngles}");
 
-        Debug.Log($"[Colocation] Camera rig aligned to anchor at {anchorT.position} ✅");
+        if (sceneRoot != null)
+        {
+            // Move the scene so the anchor is at world origin
+            // This way all players see the scene at the same position relative to the anchor
+            sceneRoot.position = -anchorT.position;
+            sceneRoot.rotation = Quaternion.Inverse(anchorT.rotation);
+            Debug.Log("[Colocation] Scene root aligned to anchor ✅");
+        }
+        else
+        {
+            // Fallback: align camera rig instead
+            if (cameraRig == null)
+            {
+                Debug.LogError("[Colocation] Neither sceneRoot nor cameraRig assigned!");
+                return;
+            }
+
+            Transform root = cameraRig.transform.root;
+            // Build offset transform: move root so that anchor ends up at origin
+            Quaternion deltaRot = Quaternion.Inverse(anchorT.rotation);
+            root.rotation = deltaRot * root.rotation;
+            root.position = deltaRot * (root.position - anchorT.position);
+            Debug.Log("[Colocation] Camera rig aligned to anchor ✅");
+        }
     }
 
-    // ── Optional reset for debugging ─────────────────────────────────────────
     public void ResetAlignment()
     {
         _isAligned = false;
-        if (cameraRig != null)
+        CancelInvoke(nameof(AlignToAnchor));
+        if (sceneRoot != null)
         {
-            cameraRig.transform.position = Vector3.zero;
-            cameraRig.transform.rotation = Quaternion.identity;
+            sceneRoot.position = Vector3.zero;
+            sceneRoot.rotation = Quaternion.identity;
         }
         Debug.Log("[Colocation] Alignment reset.");
     }
