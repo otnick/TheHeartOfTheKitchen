@@ -16,6 +16,8 @@ public class WebSocketClientExample : MonoBehaviour
     public string serverIP = "XXX.XXX.XXX.XXX"; // Replace with your server's IP address
     public int serverPort = 8081; // Replace with your server's port number (8081 is the default)
     private GameObject tangiblePan;
+    [SerializeField]
+    private MeatGrinder meatGrinder;
 
     private float roll, pitch, yaw;
 
@@ -91,6 +93,10 @@ public class WebSocketClientExample : MonoBehaviour
         if(msg.Contains("PAN")) {
             handlePanMessage(valueParsed);
         }
+        if (msg.Contains("grinder"))
+        {
+            HandleGrinderMessage();
+        }
 
     }
 
@@ -100,6 +106,11 @@ public class WebSocketClientExample : MonoBehaviour
             p = pitch;
             y = -yaw;
         return true;
+    }
+    private void HandleGrinderMessage()
+    {
+        Debug.Log("spawninggg fiiiddd");
+        meatGrinder.SpawnFood();
     }
 
     private void handlePanMessage(string message)
