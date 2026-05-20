@@ -3,7 +3,22 @@ guid: 2b512c14c685b7b47a044895ed402bc9
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BookMat
+    second: {fileID: 2100000, guid: 080f219b497f69d47884e71be8c9111c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: InkMat
+    second: {fileID: 2100000, guid: 080f219b497f69d47884e71be8c9111c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PulpitMat
+    second: {fileID: 2100000, guid: 080f219b497f69d47884e71be8c9111c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
