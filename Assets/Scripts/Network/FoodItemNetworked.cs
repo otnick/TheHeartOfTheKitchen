@@ -28,7 +28,6 @@ public class FoodItemNetworked : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        rb.isKinematic = !Object.HasStateAuthority;
         if (!Object.HasStateAuthority) return;
 
         if (fallingThroughThePan)
