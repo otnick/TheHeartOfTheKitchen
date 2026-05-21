@@ -5,6 +5,7 @@ public class FoodItemNetworked : NetworkBehaviour
     public bool fallingThroughThePan { get; set; } = false;
     private GameObject pan;
     private NetworkTransform nt;
+    private Rigidbody rb;
 
     [Networked, OnChangedRender(nameof(OnDecayChanged))]
     public float DecayProgress { get; set; } // 0 = fresh, 1 = black
@@ -22,10 +23,12 @@ public class FoodItemNetworked : NetworkBehaviour
         pan = GameObject.Find("Pan");
         nt = gameObject.GetComponent<NetworkTransform>();
         _renderer = gameObject.GetComponentInChildren<Renderer>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     public override void FixedUpdateNetwork()
     {
+        rb.isKinematic = !Object.HasStateAuthority;
         if (!Object.HasStateAuthority) return;
 
         if (fallingThroughThePan)
@@ -37,8 +40,13 @@ public class FoodItemNetworked : NetworkBehaviour
     private void TeleportItem()
     {
         // Snap it back to the floor if it fell through
-        nt.Teleport(new Vector3(transform.localPosition.x, pan.transform.localPosition.y + transform.localScale.y / 2, transform.localPosition.z),
-            pan.transform.localRotation); //TODO: later on check the pivot points of the tangible pan and real pan.
+        nt.Teleport(
+    new Vector3(
+        transform.position.x,
+        pan.transform.position.y + transform.localScale.y / 2,
+        transform.position.z),
+        transform.rotation); //TODO: later on check the pivot points of the tangible pan and real pan.
+        Debug.Log("teleporting food.");
         return;
     }
 

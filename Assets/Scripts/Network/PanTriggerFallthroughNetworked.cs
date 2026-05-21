@@ -27,6 +27,7 @@ public class PanTriggerFallthroughNetworked : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.gameObject.GetComponent<FoodItemNetworked>().fallingThroughThePan = true;
+            Debug.Log("food trigger interaction");
         }
     }
     private void OnTriggerStay(Collider other)
@@ -34,6 +35,7 @@ public class PanTriggerFallthroughNetworked : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             other.gameObject.GetComponent<FoodItemNetworked>().fallingThroughThePan = true;
+            Debug.Log("food trigger interaction");
         }
     }
 }
