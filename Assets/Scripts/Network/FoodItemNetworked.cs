@@ -12,7 +12,7 @@ public class FoodItemNetworked : NetworkBehaviour
 
     private Renderer _renderer;
 
-    [SerializeField] private Color _freshColor = new Color(1f, 0.6006289f, 0.6670616f);
+    [SerializeField] private Color _freshColor = new Color(0f, 0f, 0f);
     [SerializeField] private Color _brownColor = new Color(0.4f, 0.2f, 0f);
     [SerializeField] private Color _blackColor = Color.black;
     [SerializeField] private float cookingSpeed = 0.05f;
