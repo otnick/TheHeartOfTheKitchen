@@ -11,16 +11,17 @@ public class FoodItemNetworked : NetworkBehaviour
 
     private Renderer _renderer;
 
-    [SerializeField] private Color _freshColor = Color.green;
+    [SerializeField] private Color _freshColor = new Color(1f, 0.6006289f, 0.6670616f);
     [SerializeField] private Color _brownColor = new Color(0.4f, 0.2f, 0f);
     [SerializeField] private Color _blackColor = Color.black;
     [SerializeField] private float cookingSpeed = 0.05f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Spawned()
     {
         pan = GameObject.Find("Pan");
         nt = gameObject.GetComponent<NetworkTransform>();
+        _renderer = gameObject.GetComponentInChildren<Renderer>();
     }
 
     public override void FixedUpdateNetwork()
@@ -51,7 +52,7 @@ public class FoodItemNetworked : NetworkBehaviour
         // Two-stage lerp: 0-0.5 = fresh→brown, 0.5-1 = brown→black
         Color color = t < 0.5f
             ? Color.Lerp(_freshColor, _brownColor, t * 2f) // lerp from 0-1, but our value matters only up until 0.5 so we *2f makes sense no?>
-            : Color.Lerp(_freshColor, _blackColor, (t - 0.5f) * 2f);
+            : Color.Lerp(_brownColor, _blackColor, (t - 0.5f) * 2f);
 
         _renderer.material.color = color;
     }
@@ -60,5 +61,6 @@ public class FoodItemNetworked : NetworkBehaviour
     {
         DecayProgress += Runner.DeltaTime * cookingSpeed;
         DecayProgress = Mathf.Clamp01(DecayProgress);
+        Debug.Log("cooking");
     }
 }
