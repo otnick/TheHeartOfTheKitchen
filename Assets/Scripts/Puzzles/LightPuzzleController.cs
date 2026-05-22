@@ -1,4 +1,5 @@
 using UnityEngine;
+using Fusion;
 
 public class LightPuzzleController : MonoBehaviour
 {
@@ -29,9 +30,17 @@ public class LightPuzzleController : MonoBehaviour
     }
 
     public void ToggleLights()
+{
+    var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
+    if (playerNetwork != null)
     {
-        ApplyState(!lightsOff);
+        playerNetwork.RPC_ToggleLights(!lightsOff);
     }
+    else
+    {
+        Debug.LogWarning("PlayerNetwork not found!");
+    }
+}
 
     public void ApplyState(bool turnLightsOff)
     {

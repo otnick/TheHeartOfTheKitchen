@@ -19,11 +19,14 @@ public class PanTriggerFallthrough : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             // Snap it back to the floor if it fell through
-            other.transform.localPosition = new Vector3(other.transform.localPosition.x, this.transform.position.y + other.transform.localScale.y/2, other.transform.localPosition.z) ;
+            other.transform.localPosition = new Vector3(other.transform.localPosition.x, this.transform.localPosition.y + other.transform.localScale.y/2, other.transform.localPosition.z) ;
             //other.attachedRigidbody.linearVelocity = Vector3.zero;
             other.attachedRigidbody.linearVelocity = new Vector3(other.attachedRigidbody.linearVelocity.x,GetComponent<Rigidbody>().linearVelocity.y, other.attachedRigidbody.linearVelocity.z);
             //other.transform.localRotation = Quaternion.Euler(new Vector3(transform.localRotation.x, other.transform.localRotation.y, transform.localRotation.z));
             other.transform.localRotation = transform.localRotation;
+            //FoodAcceleration foodAcceleration = other.gameObject.GetComponent<FoodAcceleration>();
+            //foodAcceleration.UpdateAcceleration();
+            //foodAcceleration.ApplyAcceleration();
         }
     }
     private void OnTriggerStay(Collider other)
@@ -31,11 +34,14 @@ public class PanTriggerFallthrough : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             // Snap it back to the floor if it fell through
-            other.transform.localPosition = new Vector3(other.transform.localPosition.x, this.transform.position.y + other.transform.localScale.y / 2, other.transform.localPosition.z);
+            other.transform.localPosition = new Vector3(other.transform.localPosition.x, this.transform.localPosition.y + other.transform.localScale.y / 2, other.transform.localPosition.z);
             //other.attachedRigidbody.linearVelocity = Vector3.zero;
             other.attachedRigidbody.linearVelocity = new Vector3(other.attachedRigidbody.linearVelocity.x,GetComponent<Rigidbody>().linearVelocity.y, other.attachedRigidbody.linearVelocity.z);
             //other.transform.localRotation = Quaternion.Euler(new Vector3(transform.localRotation.x,other.transform.localRotation.y, transform.localRotation.z));
             other.transform.localRotation = transform.localRotation;
+            //FoodAcceleration foodAcceleration = other.gameObject.GetComponent<FoodAcceleration>();
+            //foodAcceleration.UpdateAcceleration();
+            //foodAcceleration.ApplyAcceleration();
         }
     }
 }
