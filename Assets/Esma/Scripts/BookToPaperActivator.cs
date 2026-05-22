@@ -1,8 +1,9 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using Unity.Netcode;
 
-public class BookToPaperActivator : MonoBehaviour
+public class BookToPaperActivator : NetworkBehaviour
 {
     [Header("Objects")]
     public GameObject paper;
@@ -12,100 +13,120 @@ public class BookToPaperActivator : MonoBehaviour
 
     [Header("Timer")]
     public TextMeshProUGUI timerText;
-    public float countdownTime = 147f; // 2 min 27 sec
+    public float countdownTime = 147f;
 
     [Header("Audio")]
     public AudioSource musicSource;
 
-    private bool activated = false;
+    private NetworkVariable<bool> activated = new(false);
+    private NetworkVariable<double> startTime = new(0);
 
     private void OnTriggerEnter(Collider other)
     {
-        if (activated) return;
+        if (activated.Value) return;
 
-        ActivateSequence();
+        if (NetworkManager.Singleton == null || !NetworkManager.Singleton.IsListening)
+        {
+            Debug.LogWarning("NetworkManager is not started yet.");
+            return;
+        }
+
+        if (IsServer)
+        {
+            StartSequenceServer();
+        }
+        else
+        {
+            RequestStartServerRpc();
+        }
     }
 
-    void ActivateSequence()
+    [ServerRpc(RequireOwnership = false)]
+    void RequestStartServerRpc()
     {
-        activated = true;
+        if (activated.Value) return;
+        StartSequenceServer();
+    }
 
-        // Hide book animation
-        if (bookModel1 != null)
-            bookModel1.SetActive(false);
+    void StartSequenceServer()
+    {
+        activated.Value = true;
+        startTime.Value = NetworkManager.Singleton.ServerTime.Time;
 
-        // Hide book model
-        if (bookModel2 != null)
-            bookModel2.SetActive(false);
+        StartSequenceClientRpc(startTime.Value);
+    }
 
-        // Show paper
-        if (paper != null)
-            paper.SetActive(true);
+    [ClientRpc]
+    void StartSequenceClientRpc(double networkStartTime)
+    {
+        ActivateVisuals();
 
-        // Show timer UI
-        if (timerUI != null)
-            timerUI.SetActive(true);
-
-        // Start music
         if (musicSource != null)
         {
-            musicSource.volume = 0.1f;
+            musicSource.volume = 0.05f;
             musicSource.Play();
-
             StartCoroutine(IncreaseMusicVolume());
         }
 
-        // Start countdown
-        StartCoroutine(StartTimer());
+        StartCoroutine(StartTimer(networkStartTime));
+    }
+
+    void ActivateVisuals()
+    {
+        if (bookModel1 != null)
+            bookModel1.SetActive(false);
+
+        if (bookModel2 != null)
+            bookModel2.SetActive(false);
+
+        if (paper != null)
+            paper.SetActive(true);
+
+        if (timerUI != null)
+            timerUI.SetActive(true);
     }
 
     IEnumerator IncreaseMusicVolume()
     {
-        float duration = countdownTime; // whole timer duration
-
+        float duration = countdownTime;
         float startVolume = 0.05f;
         float targetVolume = 1f;
-
         float time = 0f;
-
-        musicSource.volume = startVolume;
 
         while (time < duration)
         {
             time += Time.deltaTime;
-
-            musicSource.volume = Mathf.Lerp(
-                startVolume,
-                targetVolume,
-                time / duration
-            );
-
+            musicSource.volume = Mathf.Lerp(startVolume, targetVolume, time / duration);
             yield return null;
         }
 
         musicSource.volume = targetVolume;
     }
 
-    IEnumerator StartTimer()
+    IEnumerator StartTimer(double networkStartTime)
     {
-        float currentTime = countdownTime;
-
-        while (currentTime > 0)
+        while (true)
         {
-            currentTime -= Time.deltaTime;
+            double elapsed = NetworkManager.Singleton.ServerTime.Time - networkStartTime;
+            float currentTime = countdownTime - (float)elapsed;
+
+            if (currentTime <= 0)
+                break;
 
             int minutes = Mathf.FloorToInt(currentTime / 60);
             int seconds = Mathf.FloorToInt(currentTime % 60);
 
-            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+            if (timerText != null)
+                timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
 
             yield return null;
         }
 
-        timerText.text = "00:00";
+        if (timerText != null)
+            timerText.text = "00:00";
 
-        // GAME OVER
-        musicSource.Stop();
+        if (musicSource != null)
+            musicSource.Stop();
 
         Debug.Log("Game Over");
     }
