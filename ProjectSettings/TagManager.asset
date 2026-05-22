@@ -31,6 +31,8 @@ TagManager:
   - QDSUIToggleCheckboxRadio
   - Food
   - Bowl
+  - FxTemporaire
+  - Knife
   layers:
   - Default
   - TransparentFX
