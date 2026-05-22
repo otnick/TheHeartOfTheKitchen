@@ -16,12 +16,15 @@ IL2CPP_EXTERN_C const Il2CppMethodPointer g_UnresolvedInstanceMethodPointers[];
 IL2CPP_EXTERN_C const Il2CppMethodPointer g_UnresolvedStaticMethodPointers[];
 IL2CPP_EXTERN_C Il2CppInteropData g_Il2CppInteropData[];
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_CFXRDemo_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_CFXRRuntime_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Fusion_Common_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Fusion_Log_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Fusion_Realtime_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Fusion_Runtime_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Fusion_Sockets_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Fusion_Unity_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_KinoBloom_Runtime_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Meta_XR_Audio_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Meta_XR_BuildingBlocks_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Meta_XR_BuildingBlocks_DepthAPI_CodeGenModule;
@@ -123,15 +126,18 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_endel_nativewebsocket_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_meta_xr_mrutilitykit_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_mscorlib_CodeGenModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule* g_CodeGenModules[];
-const Il2CppCodeGenModule* g_CodeGenModules[107] = 
+const Il2CppCodeGenModule* g_CodeGenModules[110] = 
 {
 	(&g_AssemblyU2DCSharp_CodeGenModule),
+	(&g_CFXRDemo_CodeGenModule),
+	(&g_CFXRRuntime_CodeGenModule),
 	(&g_Fusion_Common_CodeGenModule),
 	(&g_Fusion_Log_CodeGenModule),
 	(&g_Fusion_Realtime_CodeGenModule),
 	(&g_Fusion_Runtime_CodeGenModule),
 	(&g_Fusion_Sockets_CodeGenModule),
 	(&g_Fusion_Unity_CodeGenModule),
+	(&g_KinoBloom_Runtime_CodeGenModule),
 	(&g_Meta_XR_Audio_CodeGenModule),
 	(&g_Meta_XR_BuildingBlocks_CodeGenModule),
 	(&g_Meta_XR_BuildingBlocks_DepthAPI_CodeGenModule),
@@ -238,20 +244,20 @@ const Il2CppCodeRegistration g_CodeRegistration =
 {
 	98,
 	g_ReversePInvokeWrapperPointers,
-	204664,
+	204822,
 	g_Il2CppGenericMethodPointers,
 	g_Il2CppGenericAdjustorThunks,
-	40948,
+	40998,
 	g_Il2CppInvokerPointers,
-	6138,
+	6139,
 	g_UnresolvedVirtualMethodPointers,
 	g_UnresolvedInstanceMethodPointers,
 	g_UnresolvedStaticMethodPointers,
-	1843,
+	1851,
 	g_Il2CppInteropData,
 	0,
 	NULL,
-	107,
+	110,
 	g_CodeGenModules,
 };
 IL2CPP_EXTERN_C_CONST Il2CppMetadataRegistration g_MetadataRegistration;
