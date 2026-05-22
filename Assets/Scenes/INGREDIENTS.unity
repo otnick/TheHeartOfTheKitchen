@@ -11799,8 +11799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ef328759cc14e4bac7cb2342c3a1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlyingIngredient
-  speed: 0
-  amplitude: 0
+  speed: 0.7
+  amplitude: 0.3
   wingObject: {fileID: 640865935}
 --- !u!114 &360445819
 MonoBehaviour:
