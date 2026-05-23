@@ -1,8 +1,10 @@
 using UnityEngine;
+using Fusion;
 
 public class KnifeCut : MonoBehaviour
 {
-    [Header("Object Settings")]
+    public int ingredientId;
+
     public GameObject currentObject;
     public GameObject cutObject;
 
@@ -12,23 +14,27 @@ public class KnifeCut : MonoBehaviour
     {
         if (cutDone) return;
 
-        // Detect knife
         if (other.CompareTag("Knife"))
         {
-            CutObject();
+            var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
+
+            if (playerNetwork != null)
+                playerNetwork.RPC_CutIngredient(ingredientId);
         }
     }
 
-    void CutObject()
+    public void ApplyCut()
     {
+        if (cutDone) return;
+
         cutDone = true;
 
-        // Hide original object
         if (currentObject != null)
             currentObject.SetActive(false);
 
-        // Show cut version
         if (cutObject != null)
             cutObject.SetActive(true);
+
+        Debug.Log("Ingredient cut: " + ingredientId);
     }
 }

@@ -34,4 +34,38 @@ public class PlayerNetwork : NetworkBehaviour
             setup.ApplyTablePlacement(position, rotation);
         }
     }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_IngredientEnterBowl(int ingredientId)
+    {
+        FlyingIngredient[] ingredients = FindObjectsByType<FlyingIngredient>(FindObjectsSortMode.None);
+
+        foreach (var ingredient in ingredients)
+        {
+            if (ingredient.ingredientId == ingredientId)
+            {
+                ingredient.ApplyEnterBowl();
+                return;
+            }
+        }
+
+        Debug.LogWarning("FlyingIngredient not found: " + ingredientId);
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_CutIngredient(int ingredientId)
+    {
+        KnifeCut[] cutters = FindObjectsByType<KnifeCut>(FindObjectsSortMode.None);
+
+        foreach (var cutter in cutters)
+        {
+            if (cutter.ingredientId == ingredientId)
+            {
+                cutter.ApplyCut();
+                return;
+            }
+        }
+
+        Debug.LogWarning("KnifeCut not found: " + ingredientId);
+    }
 }
