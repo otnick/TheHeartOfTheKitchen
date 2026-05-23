@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using Fusion;
+using Unity.XR.CoreUtils;
 public class FoodItemNetworked : NetworkBehaviour
 {
+    public bool isCooking { get; set; } = false;
     public bool fallingThroughThePan { get; set; } = false;
     private GameObject pan;
     private NetworkTransform nt;
     private Rigidbody rb;
+    private GameObject particles;
 
     [Networked, OnChangedRender(nameof(OnDecayChanged))]
     public float DecayProgress { get; set; } // 0 = fresh, 1 = black
@@ -24,6 +27,10 @@ public class FoodItemNetworked : NetworkBehaviour
         nt = gameObject.GetComponent<NetworkTransform>();
         _renderer = gameObject.GetComponentInChildren<Renderer>();
         rb = gameObject.GetComponent<Rigidbody>();
+    }
+    private void Start()
+    {
+        particles = transform.Find("smokeParticles").gameObject;
     }
 
     public override void FixedUpdateNetwork()
@@ -70,5 +77,13 @@ public class FoodItemNetworked : NetworkBehaviour
         DecayProgress += Runner.DeltaTime * cookingSpeed;
         DecayProgress = Mathf.Clamp01(DecayProgress);
         Debug.Log("cooking");
+    }
+    public void EnableParticles(bool setActive)
+    {
+        particles.SetActive(setActive);
+    }
+    public bool ParticlesEnabled()
+    {
+        return particles.activeSelf;
     }
 }

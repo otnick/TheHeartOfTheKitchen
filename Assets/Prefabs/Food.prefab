@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 7e52cb06-5bc1-497a-8e34-20867a1e35ad
+  instanceId: da8b7f03-71d5-4784-bde5-91eda6096c54
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 4687301436410066759}
   - component: {fileID: 2731877834359600827}
   - component: {fileID: 3094613422032928980}
+  - component: {fileID: 2797036167221032389}
   m_Layer: 0
   m_Name: Food
   m_TagString: Food
@@ -262,6 +263,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2744049758395912241}
+  - {fileID: 8563555725228380637}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4090822023879409232
@@ -277,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.BuildingBlocks::Meta.XR.BuildingBlocks.BuildingBlock
   blockId: e9b4b64f-1c7e-4dff-8f3c-ce409bdc3951
-  instanceId: 8ed9b0e3-f6e8-4de8-ae24-0f192d7f173f
+  instanceId: 5e1373b4-b1ea-431e-8e13-d56952466e84
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 54548176-30f4-4a4a-8057-340a383c6102
@@ -447,6 +449,7 @@ MonoBehaviour:
   - {fileID: 4687301436410066759}
   - {fileID: 2731877834359600827}
   - {fileID: 3094613422032928980}
+  - {fileID: 2797036167221032389}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &4687301436410066759
 MonoBehaviour:
@@ -494,3 +497,101 @@ MonoBehaviour:
   _brownColor: {r: 0.4, g: 0.2, b: 0, a: 1}
   _blackColor: {r: 0, g: 0, b: 0, a: 1}
   cookingSpeed: 0.005
+--- !u!114 &2797036167221032389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872901807826945667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d54ff999dfe864ca191a764a8d0810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodPlateJointHandler
+  breakForce: 16.02
+  breakTorque: 1
+  springForce: 34
+  _maxTiltAngle: 30
+--- !u!1001 &8144958045370543438
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3068151431811327709}
+    m_Modifications:
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684592797095839580, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684592797095839580, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684592797095839580, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: EmissionModule.m_BurstCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684592797095839580, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134734856016519393, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_Name
+      value: smokeParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134734856016519393, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+--- !u!4 &8563555725228380637 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 567287248765418643, guid: 16bc50001e91f90479a6d7cd1795368a, type: 3}
+  m_PrefabInstance: {fileID: 8144958045370543438}
+  m_PrefabAsset: {fileID: 0}
