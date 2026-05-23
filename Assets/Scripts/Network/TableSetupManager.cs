@@ -9,15 +9,19 @@ public class TableSetupManager : MonoBehaviour
 
     [Header("Game")]
     public GameObject gameRoot;
+    public Vector3 gameRootOffset = new Vector3(0.275f, -0.38f, 0f);
 
     public void ConfirmTablePlacement()
     {
+        Vector3 gameRootPosition =
+            ghostStove.position + gameRootOffset;
+
         var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
 
         if (playerNetwork != null)
         {
             playerNetwork.RPC_ConfirmTablePlacement(
-                ghostStove.position,
+                gameRootPosition,
                 ghostStove.rotation
             );
         }

@@ -1844,10 +1844,10 @@ PrefabInstance:
       addedObject: {fileID: 99850607}
     - targetCorrespondingSourceObject: {fileID: 1030972132, guid: abc00000000012668423437282172797, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 99850606}
+      addedObject: {fileID: 99850612}
     - targetCorrespondingSourceObject: {fileID: 1030972132, guid: abc00000000012668423437282172797, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 99850612}
+      addedObject: {fileID: 99850606}
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000012668423437282172797, type: 3}
 --- !u!4 &99850602 stripped
 Transform:
@@ -2012,8 +2012,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4597074, y: 0.8153338, z: 0.57659996}
-  m_Center: {x: 0.007485551, y: 0.4308533, z: -0.055102766}
+  m_Size: {x: 0.4597074, y: 0.7647831, z: 0.5028731}
+  m_Center: {x: 0.007485563, y: 0.45612922, z: -0.018239291}
 --- !u!1 &101021259
 GameObject:
   m_ObjectHideFlags: 0
@@ -7548,7 +7548,7 @@ Transform:
   m_GameObject: {fileID: 391729645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.979, y: 0, z: -4.796}
+  m_LocalPosition: {x: 0.979, y: 0, z: -4.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8337,8 +8337,8 @@ Transform:
   m_GameObject: {fileID: 423291780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.389, z: -0.017}
-  m_LocalScale: {x: 1, y: 0.75907, z: 0.39691424}
+  m_LocalPosition: {x: -0.275, y: 0.38, z: 0}
+  m_LocalScale: {x: 1, y: 0.75, z: 0.39691424}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2019520799}
@@ -8360,6 +8360,7 @@ MonoBehaviour:
   setupRoot: {fileID: 423291780}
   ghostStove: {fileID: 2019520799}
   gameRoot: {fileID: 407263867}
+  gameRootOffset: {x: 0.275, y: -0.38, z: 0}
 --- !u!1 &426281355
 GameObject:
   m_ObjectHideFlags: 0
@@ -11095,10 +11096,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
       propertyPath: NetworkedBehaviours.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
       propertyPath: 'NetworkedBehaviours.Array.data[3]'
+      value: 
+      objectReference: {fileID: 529901092}
+    - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
+      propertyPath: 'NetworkedBehaviours.Array.data[4]'
       value: 
       objectReference: {fileID: 529901090}
     m_RemovedComponents: []
@@ -11135,6 +11140,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3068151431811327709, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
   m_PrefabInstance: {fileID: 529901088}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &529901092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2797036167221032389, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
+  m_PrefabInstance: {fileID: 529901088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529901089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d54ff999dfe864ca191a764a8d0810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodPlateJointHandler
 --- !u!1 &532575746
 GameObject:
   m_ObjectHideFlags: 0
@@ -17226,6 +17242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac947dcc1fd7834428843d29604199e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanTriggerFallthroughNetworked
+  particles: {fileID: 0}
 --- !u!1 &753974982
 GameObject:
   m_ObjectHideFlags: 0
@@ -25037,8 +25054,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.45209226, y: 0.6366035, z: 0.75671047}
-  m_Center: {x: -0.00837793, y: -0.0017057157, z: 0.121644795}
+  m_Size: {x: 0.45209226, y: 0.47405213, z: 0.75671047}
+  m_Center: {x: -0.008377949, y: 0.07956996, z: 0.121644795}
 --- !u!1 &1040960900
 GameObject:
   m_ObjectHideFlags: 0
@@ -35446,8 +35463,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.41776684, y: 0.80666125, z: 0.52433777}
-  m_Center: {x: -0.008265176, y: 0.41204405, z: -0.01646239}
+  m_Size: {x: 0.41776684, y: 0.74690235, z: 0.4912293}
+  m_Center: {x: -0.00826517, y: 0.44192445, z: 0.00009179087}
 --- !u!1 &1450968488
 GameObject:
   m_ObjectHideFlags: 0
@@ -36908,15 +36925,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490715943}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.01, y: 0, z: 4.18}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0, z: -2.485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1363151710}
   - {fileID: 1258655635}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493014365
 GameObject:
   m_ObjectHideFlags: 0
@@ -39005,10 +39022,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
       propertyPath: NetworkedBehaviours.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
       propertyPath: 'NetworkedBehaviours.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1592995980}
+    - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
+      propertyPath: 'NetworkedBehaviours.Array.data[4]'
       value: 
       objectReference: {fileID: 1592995978}
     m_RemovedComponents: []
@@ -39045,6 +39066,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3068151431811327709, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
   m_PrefabInstance: {fileID: 1592995976}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1592995980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2797036167221032389, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
+  m_PrefabInstance: {fileID: 1592995976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592995977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d54ff999dfe864ca191a764a8d0810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodPlateJointHandler
 --- !u!1 &1593554692
 GameObject:
   m_ObjectHideFlags: 0
@@ -47868,8 +47900,8 @@ Transform:
   m_GameObject: {fileID: 2019520798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: 0, z: 0}
-  m_LocalScale: {x: 0.41140458, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 855100152}
@@ -47979,7 +48011,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2019520805
 MonoBehaviour:
@@ -48016,6 +48048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4018806e5e6b6498bb6b15fc272eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockRotation
+  allowYRotation: 1
 --- !u!114 &2019520807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50634,10 +50667,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
       propertyPath: NetworkedBehaviours.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
       propertyPath: 'NetworkedBehaviours.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1522783084143385719}
+    - target: {fileID: 7306535787280076956, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
+      propertyPath: 'NetworkedBehaviours.Array.data[4]'
       value: 
       objectReference: {fileID: 1522783084143385717}
     m_RemovedComponents: []
@@ -50674,6 +50711,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3068151431811327709, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
   m_PrefabInstance: {fileID: 1522783084143385715}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1522783084143385719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2797036167221032389, guid: 20389be6f4ea8514d9800c96543b7843, type: 3}
+  m_PrefabInstance: {fileID: 1522783084143385715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522783084143385716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d54ff999dfe864ca191a764a8d0810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodPlateJointHandler
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
