@@ -1,4 +1,5 @@
 using Fusion;
+using UnityEngine;
 
 public class PlayerNetwork : NetworkBehaviour
 {
@@ -6,5 +7,20 @@ public class PlayerNetwork : NetworkBehaviour
     public void RPC_ToggleLights(bool turnLightsOff)
     {
         FindAnyObjectByType<LightPuzzleController>()?.ApplyState(turnLightsOff);
+    }
+
+    [SerializeField] private BookToPaperActivator bookActivator;
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RPC_StartBookSequence()
+    {
+        Debug.Log("RPC_StartBookSequence received");
+
+        if (bookActivator == null)
+        {
+            Debug.LogWarning("bookActivator missing on PlayerNetwork");
+            return;
+        }
+
+        bookActivator.ApplyBookSequence();
     }
 }
