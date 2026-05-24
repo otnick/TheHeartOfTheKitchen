@@ -9,15 +9,16 @@ public class PlayerNetwork : NetworkBehaviour
         FindAnyObjectByType<LightPuzzleController>()?.ApplyState(turnLightsOff);
     }
 
-    [SerializeField] private BookToPaperActivator bookActivator;
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void RPC_StartBookSequence()
     {
-        Debug.Log("RPC_StartBookSequence received");
+        var bookActivator = FindFirstObjectByType<BookToPaperActivator>(
+            FindObjectsInactive.Include
+        );
 
         if (bookActivator == null)
         {
-            Debug.LogWarning("bookActivator missing on PlayerNetwork");
+            Debug.LogWarning("BookToPaperActivator not found!");
             return;
         }
 
