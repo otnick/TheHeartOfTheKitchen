@@ -19641,6 +19641,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8144432364695783454, guid: d922073d2382b554cbdc823c39326eae, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 34da0404e8462634fb12e76113dd17c8, type: 2}
     - target: {fileID: 8996212884548413558, guid: d922073d2382b554cbdc823c39326eae, type: 3}
       propertyPath: m_Name
       value: MeatGrinder
