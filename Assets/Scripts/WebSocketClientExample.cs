@@ -14,13 +14,7 @@ public class WebSocketClientExample : MonoBehaviour
 {
     private WebSocket websocket;
     public string serverIP = "XXX.XXX.XXX.XXX"; // Replace with your server's IP address
-    public int serverPort = 8081; // Replace with your server's port number (8081 is the default)
-    private GameObject tangiblePan;
-
-    private float roll, pitch, yaw;
-
-    [Range(0, 255)]
-    public int ledIntensity = 0;
+    public int serverPort = 8081; // Replace with your server's port number (8081 is the default
 
     async void Start()
     {
@@ -52,7 +46,6 @@ public class WebSocketClientExample : MonoBehaviour
         };
 
         await websocket.Connect();
-        tangiblePan = GameObject.Find("Pan");
     }
 
     void Update()
@@ -88,29 +81,14 @@ public class WebSocketClientExample : MonoBehaviour
     {
         string valueParsed = msg.Substring( msg.IndexOf(":") + 1);
 
-        if(msg.Contains("PAN")) {
-            handlePanMessage(valueParsed);
-        }
+        if (msg.Contains("grinder")) HandleGrinderMessage();
 
     }
 
-    public bool TryGetRotation(out float r, out float p, out float y)
+
+    private void HandleGrinderMessage()
     {
-            r = -roll;
-            p = pitch;
-            y = -yaw;
-        return true;
+        FindFirstObjectByType<MeatGrinder>().SpawnMeatGround();
     }
-
-    private void handlePanMessage(string message)
-    {
-        //TODO: handle the pan message
-        string[] dataList = message.Split(',');
-            roll = float.Parse(dataList[0]);
-            pitch = float.Parse(dataList[1]);
-            yaw = float.Parse(dataList[2]);
-        return;
-    }
-
 }
 

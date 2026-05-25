@@ -23,8 +23,10 @@ public class PanTriggerFallthroughNetworked : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Food"))
         {
-            collision.gameObject.GetComponent<FoodItemNetworked>().CookingFood();
-            
+            FoodItemNetworked food = collision.gameObject.GetComponent<FoodItemNetworked>();
+            food.CookingFood();
+            if (!food.isCooking) food.isCooking = true;
+
         }
     }
 
