@@ -13,12 +13,19 @@ public class KnifeCut : MonoBehaviour
     public NetworkPrefabRef cutPrefab;
     public Transform spawnPoint;
 
+    [Header("Spawn Settings")]
+    public int spawnCount = 3;
+    public float spawnSpacing = 0.05f;
+
     [Header("Food Colors")]
     public Color freshColor = Color.white;
     public Color brownColor = new Color(0.35f, 0.16f, 0.04f);
     public Color blackColor = Color.black;
 
     private bool cutDone = false;
+    
+    [Header("Cut Effect")]
+    public GameObject cutParticlePrefab;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -37,14 +44,12 @@ public class KnifeCut : MonoBehaviour
                     ingredientId,
                     pos,
                     rot,
+                    spawnCount,
+                    spawnSpacing,
                     freshColor,
                     brownColor,
                     blackColor
                 );
-            }
-            else
-            {
-                Debug.LogWarning("PlayerNetwork not found!");
             }
         }
     }
@@ -54,6 +59,15 @@ public class KnifeCut : MonoBehaviour
         if (cutDone) return;
 
         cutDone = true;
+
+        Vector3 pos = spawnPoint != null ? spawnPoint.position : transform.position;
+        Quaternion rot = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
+
+        if (cutParticlePrefab != null)
+        {
+            GameObject particles = Instantiate(cutParticlePrefab, pos, rot);
+            Destroy(particles, 3f);
+        }
 
         if (currentObject != null)
             currentObject.SetActive(false);

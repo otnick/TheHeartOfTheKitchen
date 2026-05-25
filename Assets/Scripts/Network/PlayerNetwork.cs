@@ -59,12 +59,13 @@ public class PlayerNetwork : NetworkBehaviour
         int ingredientId,
         Vector3 position,
         Quaternion rotation,
+        int spawnCount,
+        float spawnSpacing,
         Color freshColor,
         Color brownColor,
         Color blackColor)
     {
-        KnifeCut[] cutters =
-            FindObjectsByType<KnifeCut>(FindObjectsSortMode.None);
+        KnifeCut[] cutters = FindObjectsByType<KnifeCut>(FindObjectsSortMode.None);
 
         foreach (var cutter in cutters)
         {
@@ -77,22 +78,24 @@ public class PlayerNetwork : NetworkBehaviour
                 if (runner != null &&
                     (runner.IsServer || runner.IsSharedModeMasterClient))
                 {
-                    NetworkObject spawned = runner.Spawn(
-                        cutter.cutPrefab,
-                        position,
-                        rotation
-                    );
-
-                    FoodItemNetworked food =
-                        spawned.GetComponent<FoodItemNetworked>();
-
-                    if (food != null)
+                    for (int i = 0; i < spawnCount; i++)
                     {
-                        food.SetColors(freshColor, brownColor, blackColor);
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Spawned cut prefab has no FoodItemNetworked component.");
+                        float offset = (i - (spawnCount - 1) / 2f) * spawnSpacing;
+
+                        Vector3 spawnPos =
+                            position + rotation * new Vector3(offset, 0f, 0f);
+
+                        NetworkObject spawned = runner.Spawn(
+                            cutter.cutPrefab,
+                            spawnPos,
+                            rotation
+                        );
+
+                        FoodItemNetworked food =
+                            spawned.GetComponent<FoodItemNetworked>();
+
+                        if (food != null)
+                            food.SetColors(freshColor, brownColor, blackColor);
                     }
                 }
 

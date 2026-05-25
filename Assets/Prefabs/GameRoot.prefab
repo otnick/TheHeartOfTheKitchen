@@ -2229,9 +2229,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.8431373, g: 0.45098042, b: 0.078431375, a: 1}
   brownColor: {r: 0.6132076, g: 0.4168911, b: 0.2285066, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &2233644511963361876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3827,9 +3830,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.8431373, g: 0.22352943, b: 0.10588236, a: 1}
   brownColor: {r: 0.35, g: 0.16, b: 0.04, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &3267848198209617010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6662,9 +6668,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.8431373, g: 0.427451, b: 0.098039225, a: 1}
   brownColor: {r: 0.5660378, g: 0.32789683, b: 0.16286935, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &5704461224156432283
 GameObject:
   m_ObjectHideFlags: 0
@@ -8173,9 +8182,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.7960785, g: 0.10588236, b: 0.03529412, a: 1}
   brownColor: {r: 0.35, g: 0.16, b: 0.04, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &6643968172652921677
 GameObject:
   m_ObjectHideFlags: 0
@@ -10060,9 +10072,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.27058825, g: 0.5176471, b: 0.08235294, a: 1}
   brownColor: {r: 0.3101638, g: 0.38679248, b: 0.24630654, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &7613756847009907445
 GameObject:
   m_ObjectHideFlags: 0
@@ -10962,9 +10977,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.6666667, g: 0.8431373, b: 0.21176472, a: 1}
   brownColor: {r: 0.51160026, g: 0.5283019, b: 0.19188322, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &8054486467355131508
 GameObject:
   m_ObjectHideFlags: 0
@@ -11897,9 +11915,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.28235295, g: 0.50980395, b: 0.09019608, a: 1}
   brownColor: {r: 0.40385884, g: 0.41509432, b: 0.107689574, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &8715062908210551810
 GameObject:
   m_ObjectHideFlags: 0
@@ -12506,9 +12527,12 @@ MonoBehaviour:
   cutPrefab:
     RawGuidValue: 20389be6f4ea8514d9800c96543b7843
   spawnPoint: {fileID: 9007300263722626545}
+  spawnCount: 3
+  spawnSpacing: 0.05
   freshColor: {r: 0.45882356, g: 0.6745098, b: 0.08235294, a: 1}
   brownColor: {r: 0.35, g: 0.16, b: 0.04, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
+  cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &8870454471288794351
 GameObject:
   m_ObjectHideFlags: 0
