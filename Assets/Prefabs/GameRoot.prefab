@@ -992,7 +992,7 @@ Transform:
   m_GameObject: {fileID: 1259018092444172236}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.979, y: 0, z: -4.78}
+  m_LocalPosition: {x: 0.979, y: 0.03, z: -4.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1757,7 +1757,7 @@ Transform:
   m_GameObject: {fileID: 2037926867682357247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000011921, y: 0.03, z: 1.55}
+  m_LocalPosition: {x: -0.00000011921, y: 0, z: 1.55}
   m_LocalScale: {x: 1.8014, y: 1, z: 1.4137}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5234,7 +5234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7690336829340267934
 Transform:
   m_ObjectHideFlags: 0
@@ -13493,7 +13493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e24db10862cdb248bc28ac4c1768c69, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5958438921693756439, guid: 0e24db10862cdb248bc28ac4c1768c69, type: 3}
       propertyPath: m_Color.a
@@ -13691,8 +13691,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -13703,7 +13703,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407597637895889649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
   m_Name: 

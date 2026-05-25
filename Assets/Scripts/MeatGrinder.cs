@@ -15,6 +15,9 @@ public class MeatGrinder : MonoBehaviour
     bool spawnedFood = false;
     [SerializeField]
     AudioSource foodAudioSource;
+    int timesActivated = 0;
+    [SerializeField]
+    int timesToActivate = 500;
     // Start is called once before the first execution of Update after the MonoBehaviour is 
 
     // Update is called once per frame
@@ -25,6 +28,11 @@ public class MeatGrinder : MonoBehaviour
 
     public void SpawnMeatGround()
     {
+        if (timesActivated < timesToActivate)
+        {
+            timesActivated++;
+            return;
+        }
         if (spawnedFood) return;
         var runner = FindFirstObjectByType<NetworkRunner>();
         if (runner == null)

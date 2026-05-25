@@ -18,7 +18,7 @@ public class FoodPlateJointHandler : NetworkBehaviour
     {
         if (!Object.HasStateAuthority) return;
 
-        if (col.gameObject.CompareTag("Plate"))
+        if (col.gameObject.CompareTag("Plate") || col.gameObject.CompareTag("Pan"))
         {
             // Don't add a second joint if one already exists
             if (_joint != null) return;
