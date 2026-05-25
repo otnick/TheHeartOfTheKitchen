@@ -3,10 +3,20 @@ using Fusion;
 
 public class KnifeCut : MonoBehaviour
 {
+    [Header("Ingredient")]
     public int ingredientId;
 
+    [Header("Original")]
     public GameObject currentObject;
-    public GameObject cutObject;
+
+    [Header("Cut Prefab")]
+    public NetworkPrefabRef cutPrefab;
+    public Transform spawnPoint;
+
+    [Header("Food Colors")]
+    public Color freshColor = Color.white;
+    public Color brownColor = new Color(0.35f, 0.16f, 0.04f);
+    public Color blackColor = Color.black;
 
     private bool cutDone = false;
 
@@ -19,11 +29,27 @@ public class KnifeCut : MonoBehaviour
             var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
 
             if (playerNetwork != null)
-                playerNetwork.RPC_CutIngredient(ingredientId);
+            {
+                Vector3 pos = spawnPoint != null ? spawnPoint.position : transform.position;
+                Quaternion rot = spawnPoint != null ? spawnPoint.rotation : transform.rotation;
+
+                playerNetwork.RPC_CutIngredient(
+                    ingredientId,
+                    pos,
+                    rot,
+                    freshColor,
+                    brownColor,
+                    blackColor
+                );
+            }
+            else
+            {
+                Debug.LogWarning("PlayerNetwork not found!");
+            }
         }
     }
 
-    public void ApplyCut()
+    public void ApplyCutLocal()
     {
         if (cutDone) return;
 
@@ -32,9 +58,6 @@ public class KnifeCut : MonoBehaviour
         if (currentObject != null)
             currentObject.SetActive(false);
 
-        if (cutObject != null)
-            cutObject.SetActive(true);
-
-        Debug.Log("Ingredient cut: " + ingredientId);
+        Debug.Log("Ingredient hidden after cut: " + ingredientId);
     }
 }

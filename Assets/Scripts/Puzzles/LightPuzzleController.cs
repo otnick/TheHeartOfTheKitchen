@@ -24,36 +24,55 @@ public class LightPuzzleController : MonoBehaviour
     private bool lightsOff;
     private static readonly int EmissionColorId = Shader.PropertyToID("_EmissionColor");
 
+    private void Awake()
+    {
+        FindPassthroughLayer();
+    }
+
     private void Start()
     {
         ApplyState(false);
     }
 
+    private void FindPassthroughLayer()
+    {
+        if (passthroughLayer == null)
+        {
+            passthroughLayer = FindFirstObjectByType<OVRPassthroughLayer>(
+                FindObjectsInactive.Include
+            );
+        }
+
+        Debug.Log("PassthroughLayer found: " + (passthroughLayer != null));
+    }
+
     public void ToggleLights()
-{
-    var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
-    if (playerNetwork != null)
     {
-        playerNetwork.RPC_ToggleLights(!lightsOff);
+        var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
+
+        if (playerNetwork != null)
+        {
+            playerNetwork.RPC_ToggleLights(!lightsOff);
+        }
+        else
+        {
+            Debug.LogWarning("PlayerNetwork not found!");
+        }
     }
-    else
-    {
-        Debug.LogWarning("PlayerNetwork not found!");
-    }
-}
 
     public void ApplyState(bool turnLightsOff)
     {
         lightsOff = turnLightsOff;
 
-        // 1) Virtual scene lights
+        if (passthroughLayer == null)
+            FindPassthroughLayer();
+
         foreach (var lightSource in sceneLights)
         {
             if (lightSource != null)
                 lightSource.enabled = !lightsOff;
         }
 
-        // 2) Passthrough styling
         if (passthroughLayer != null)
         {
             passthroughLayer.overlayType = OVROverlay.OverlayType.Underlay;
@@ -76,8 +95,11 @@ public class LightPuzzleController : MonoBehaviour
                 );
             }
         }
+        else
+        {
+            Debug.LogWarning("No OVRPassthroughLayer found in scene!");
+        }
 
-        // 3) Footprints show/hide
         foreach (var rend in footprintRenderers)
         {
             if (rend == null) continue;
@@ -90,10 +112,7 @@ public class LightPuzzleController : MonoBehaviour
             rend.SetPropertyBlock(block);
         }
 
-        // 4) Optional target feedback
         if (ingredientTarget != null)
-        {
             ingredientTarget.SetActive(true);
-        }
     }
 }
