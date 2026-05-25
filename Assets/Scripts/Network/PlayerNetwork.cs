@@ -31,7 +31,9 @@ public class PlayerNetwork : NetworkBehaviour
         var setup = FindFirstObjectByType<TableSetupManager>();
 
         if (setup != null)
+        {
             setup.ApplyTablePlacement(position, rotation);
+        }
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]

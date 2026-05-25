@@ -29,6 +29,10 @@ public class TableSetupManager : MonoBehaviour
                 spawnRotation
             );
         }
+        else
+        {
+            Debug.LogWarning("PlayerNetwork not found!");
+        }
     }
 
     public void ApplyTablePlacement(Vector3 position, Quaternion rotation)
