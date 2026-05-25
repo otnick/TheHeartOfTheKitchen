@@ -14240,6 +14240,10 @@ PrefabInstance:
       propertyPath: m_controller
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_modelOculusTouchRiftRightController
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35075,67 +35079,6 @@ Transform:
   - {fileID: 1891973378}
   m_Father: {fileID: 1363151710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1658433313781096546
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5804708982990485022, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6000460296034769762, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996212884548413558, guid: d922073d2382b554cbdc823c39326eae, type: 3}
-      propertyPath: m_Name
-      value: MeatGrinder
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d922073d2382b554cbdc823c39326eae, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -35154,4 +35097,3 @@ SceneRoots:
   - {fileID: 317606257}
   - {fileID: 423291781}
   - {fileID: 2145931283}
-  - {fileID: 1658433313781096546}

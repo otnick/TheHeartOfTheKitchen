@@ -321,7 +321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2abea53943d393e40ac6090c386d1655, type: 2}
+  - {fileID: 2100000, guid: 81f4afb6a57d4454283338c0a2257a45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -493,9 +493,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodItemNetworked
   _DecayProgress: 0
-  _freshColor: {r: 1, g: 1, b: 1, a: 1}
-  _brownColor: {r: 0.4, g: 0.2, b: 0, a: 1}
-  _blackColor: {r: 0, g: 0, b: 0, a: 1}
+  _FreshColor: {r: 0, g: 0, b: 0, a: 0}
+  _BrownColor: {r: 0, g: 0, b: 0, a: 0}
+  _BlackColor: {r: 0, g: 0, b: 0, a: 0}
+  defaultFreshColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultBrownColor: {r: 0.4, g: 0.2, b: 0, a: 1}
+  defaultBlackColor: {r: 0, g: 0, b: 0, a: 1}
   cookingSpeed: 0.005
 --- !u!114 &2797036167221032389
 MonoBehaviour:
