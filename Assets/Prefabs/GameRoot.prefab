@@ -12843,6 +12843,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 9176688157450611117}
     m_Modifications:
     - target: {fileID: 5235419873091548591, guid: 082815481f9809a49bc7e44fb142da32, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235419873091548591, guid: 082815481f9809a49bc7e44fb142da32, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 54a7b577f6091e34886a2f8f94b39678, type: 2}
@@ -12922,6 +12926,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5887432825129157139, guid: 082815481f9809a49bc7e44fb142da32, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5477090001768672378}
+    - targetCorrespondingSourceObject: {fileID: 5887432825129157139, guid: 082815481f9809a49bc7e44fb142da32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8558372933318707953}
   m_SourcePrefab: {fileID: 100100000, guid: 082815481f9809a49bc7e44fb142da32, type: 3}
 --- !u!4 &5977312489713981127 stripped
 Transform:
@@ -13109,6 +13116,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Meta.XR.MultiplayerBlocks.Shared::Meta.XR.MultiplayerBlocks.Shared.TransferOwnershipOnSelect
   UseGravity: 1
+--- !u!65 &8558372933318707953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465056520116112509}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3978755, y: 0.04267382, z: 0.40401337}
+  m_Center: {x: -0.000000029802322, y: 0.02133691, z: 0}
 --- !u!1001 &678207589198045088
 PrefabInstance:
   m_ObjectHideFlags: 0
