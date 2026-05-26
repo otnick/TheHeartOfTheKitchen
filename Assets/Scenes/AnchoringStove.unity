@@ -33086,7 +33086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4018806e5e6b6498bb6b15fc272eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockRotation
-  allowYRotation: 1
 --- !u!114 &2019520807
 MonoBehaviour:
   m_ObjectHideFlags: 0

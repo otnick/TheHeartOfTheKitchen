@@ -499,7 +499,7 @@ MonoBehaviour:
   defaultFreshColor: {r: 1, g: 1, b: 1, a: 1}
   defaultBrownColor: {r: 0.4, g: 0.2, b: 0, a: 1}
   defaultBlackColor: {r: 0, g: 0, b: 0, a: 1}
-  cookingSpeed: 0.01
+  cookingSpeed: 0.0075
 --- !u!114 &2797036167221032389
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,13 +23,9 @@ public class TableSetupManager : MonoBehaviour
         Quaternion spawnRotation = ghostStove.rotation;
 
         var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
-
         if (playerNetwork != null)
         {
-            playerNetwork.RPC_ConfirmTablePlacement(
-                spawnPosition,
-                spawnRotation
-            );
+            playerNetwork.RPC_ConfirmTablePlacement(spawnPosition, spawnRotation);
         }
         else
         {
@@ -37,15 +33,10 @@ public class TableSetupManager : MonoBehaviour
         }
     }
 
-    private bool placementConfirmed = false;
     public void ApplyTablePlacement(Vector3 position, Quaternion rotation)
     {
         if (setupRoot != null)
             setupRoot.SetActive(false);
-
-        if (placementConfirmed)
-            return;
-        placementConfirmed = true;
 
         var runner = FindFirstObjectByType<NetworkRunner>();
         if (runner == null)
@@ -56,6 +47,9 @@ public class TableSetupManager : MonoBehaviour
 
         if (runner.IsServer || runner.IsSharedModeMasterClient)
         {
+            if (spawnedGameRoot != null)
+                return;
+
             spawnedGameRoot = runner.Spawn(
                 gameRootNetworkPrefab,
                 position,

@@ -3,9 +3,8 @@ using UnityEngine;
 public class GhostStovePlacementLock : MonoBehaviour
 {
     private Rigidbody rb;
+    private Vector3 lockedPosition;
     private Quaternion lockedRotation;
-    private float lockedX;
-    private float lockedZ;
 
     private void Awake()
     {
@@ -14,15 +13,13 @@ public class GhostStovePlacementLock : MonoBehaviour
 
     private void Start()
     {
+        lockedPosition = transform.position;
         lockedRotation = transform.rotation;
-        lockedX = transform.position.x;
-        lockedZ = transform.position.z;
     }
 
     private void LateUpdate()
     {
-        Vector3 pos = transform.position;
-        transform.position = new Vector3(lockedX, pos.y, lockedZ);
+        transform.position = lockedPosition;
         transform.rotation = lockedRotation;
 
         if (rb != null)
