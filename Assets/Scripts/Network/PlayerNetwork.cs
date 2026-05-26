@@ -15,13 +15,11 @@ public class PlayerNetwork : NetworkBehaviour
         var bookActivator = FindFirstObjectByType<BookToPaperActivator>(
             FindObjectsInactive.Include
         );
-
         if (bookActivator == null)
         {
             Debug.LogWarning("BookToPaperActivator not found!");
             return;
         }
-
         bookActivator.ApplyBookSequence();
     }
 
@@ -29,7 +27,6 @@ public class PlayerNetwork : NetworkBehaviour
     public void RPC_ConfirmTablePlacement(Vector3 position, Quaternion rotation)
     {
         var setup = FindFirstObjectByType<TableSetupManager>();
-
         if (setup != null)
             setup.ApplyTablePlacement(position, rotation);
     }
@@ -39,7 +36,6 @@ public class PlayerNetwork : NetworkBehaviour
     {
         FlyingIngredient[] ingredients =
             FindObjectsByType<FlyingIngredient>(FindObjectsSortMode.None);
-
         foreach (var ingredient in ingredients)
         {
             if (ingredient.ingredientId == ingredientId)
@@ -48,7 +44,6 @@ public class PlayerNetwork : NetworkBehaviour
                 return;
             }
         }
-
         Debug.LogWarning("FlyingIngredient not found: " + ingredientId);
     }
 
@@ -57,47 +52,41 @@ public class PlayerNetwork : NetworkBehaviour
         int ingredientId,
         Vector3 position,
         Quaternion rotation,
+        int spawnCount,
+        float spawnSpacing,
         Color freshColor,
         Color brownColor,
         Color blackColor)
     {
-        KnifeCut[] cutters =
-            FindObjectsByType<KnifeCut>(FindObjectsSortMode.None);
-
+        KnifeCut[] cutters = FindObjectsByType<KnifeCut>(FindObjectsSortMode.None);
         foreach (var cutter in cutters)
         {
             if (cutter.ingredientId == ingredientId)
             {
                 cutter.ApplyCutLocal();
-
                 var runner = FindFirstObjectByType<NetworkRunner>();
-
                 if (runner != null &&
                     (runner.IsServer || runner.IsSharedModeMasterClient))
                 {
-                    NetworkObject spawned = runner.Spawn(
-                        cutter.cutPrefab,
-                        position,
-                        rotation
-                    );
-
-                    FoodItemNetworked food =
-                        spawned.GetComponent<FoodItemNetworked>();
-
-                    if (food != null)
+                    for (int i = 0; i < spawnCount; i++)
                     {
-                        food.SetColors(freshColor, brownColor, blackColor);
-                    }
-                    else
-                    {
-                        Debug.LogWarning("Spawned cut prefab has no FoodItemNetworked component.");
+                        float offset = (i - (spawnCount - 1) / 2f) * spawnSpacing;
+                        Vector3 spawnPos =
+                            position + rotation * new Vector3(offset, 0f, 0f);
+                        NetworkObject spawned = runner.Spawn(
+                            cutter.cutPrefab,
+                            spawnPos,
+                            rotation
+                        );
+                        FoodItemNetworked food =
+                            spawned.GetComponent<FoodItemNetworked>();
+                        if (food != null)
+                            food.SetColors(freshColor, brownColor, blackColor);
                     }
                 }
-
                 return;
             }
         }
-
         Debug.LogWarning("KnifeCut not found for ingredientId: " + ingredientId);
     }
 }

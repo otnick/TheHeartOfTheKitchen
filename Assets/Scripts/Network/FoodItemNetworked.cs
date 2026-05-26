@@ -16,9 +16,18 @@ public class FoodItemNetworked : NetworkBehaviour
     [Networked, OnChangedRender(nameof(OnDecayChanged))]
     public float DecayProgress { get; set; }
 
-    [SerializeField] private Color _freshColor = new Color(0f, 0f, 0f);
-    [SerializeField] private Color _brownColor = new Color(0.4f, 0.2f, 0f);
-    [SerializeField] private Color _blackColor = Color.black;
+    [Networked, OnChangedRender(nameof(OnColorChanged))]
+    public Color FreshColor { get; set; }
+
+    [Networked, OnChangedRender(nameof(OnColorChanged))]
+    public Color BrownColor { get; set; }
+
+    [Networked, OnChangedRender(nameof(OnColorChanged))]
+    public Color BlackColor { get; set; }
+
+    [SerializeField] private Color defaultFreshColor = Color.white;
+    [SerializeField] private Color defaultBrownColor = new Color(0.4f, 0.2f, 0f);
+    [SerializeField] private Color defaultBlackColor = Color.black;
 
     [SerializeField] private float cookingSpeed = 0.05f;
 
@@ -33,17 +42,14 @@ public class FoodItemNetworked : NetworkBehaviour
         if (particleTransform != null)
             particles = particleTransform.gameObject;
 
-        ApplyColor(DecayProgress);
-    }
-
-    private void Start()
-    {
-        if (particles == null)
+        if (Object.HasStateAuthority)
         {
-            Transform particleTransform = transform.Find("smokeParticles");
-            if (particleTransform != null)
-                particles = particleTransform.gameObject;
+            FreshColor = defaultFreshColor;
+            BrownColor = defaultBrownColor;
+            BlackColor = defaultBlackColor;
         }
+
+        ApplyColor(DecayProgress);
     }
 
     public override void FixedUpdateNetwork()
@@ -81,28 +87,37 @@ public class FoodItemNetworked : NetworkBehaviour
         ApplyColor(DecayProgress);
     }
 
+    private void OnColorChanged()
+    {
+        ApplyColor(DecayProgress);
+    }
+
     private void ApplyColor(float t)
     {
         if (_renderer == null) return;
 
         Color color = t < 0.5f
-            ? Color.Lerp(_freshColor, _brownColor, t * 2f)
-            : Color.Lerp(_brownColor, _blackColor, (t - 0.5f) * 2f);
+            ? Color.Lerp(FreshColor, BrownColor, t * 2f)
+            : Color.Lerp(BrownColor, BlackColor, (t - 0.5f) * 2f);
 
         _renderer.material.color = color;
     }
 
     public void SetColors(Color fresh, Color brown, Color black)
     {
-        _freshColor = fresh;
-        _brownColor = brown;
-        _blackColor = black;
+        if (!Object.HasStateAuthority) return;
+
+        FreshColor = fresh;
+        BrownColor = brown;
+        BlackColor = black;
 
         ApplyColor(DecayProgress);
     }
 
     public void CookingFood()
     {
+        if (!Object.HasStateAuthority) return;
+
         DecayProgress += Runner.DeltaTime * cookingSpeed;
         DecayProgress = Mathf.Clamp01(DecayProgress);
 

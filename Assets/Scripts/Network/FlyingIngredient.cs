@@ -1,5 +1,6 @@
 using UnityEngine;
 using Fusion;
+using Oculus.Interaction;
 
 public class FlyingIngredient : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class FlyingIngredient : MonoBehaviour
     public float amplitude = 0.2f;
 
     private Rigidbody rb;
+    private Grabbable grabbable;
+
     private bool inBowl = false;
+    private bool wasGrabbed = false;
 
     private float offsetX;
     private float offsetY;
@@ -21,6 +25,7 @@ public class FlyingIngredient : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        grabbable = GetComponent<Grabbable>();
 
         offsetX = Random.Range(0f, 100f);
         offsetY = Random.Range(0f, 100f);
@@ -43,9 +48,17 @@ public class FlyingIngredient : MonoBehaviour
 
     void Update()
     {
+        bool isGrabbed = grabbable != null && grabbable.SelectingPointsCount > 0;
+
+        if (isGrabbed != wasGrabbed)
+        {
+            wasGrabbed = isGrabbed;
+            StopMotion();
+        }
+
         if (visualRoot == null) return;
 
-        if (inBowl)
+        if (inBowl || isGrabbed)
         {
             visualRoot.localPosition = Vector3.zero;
             return;
@@ -63,7 +76,6 @@ public class FlyingIngredient : MonoBehaviour
     void LateUpdate()
     {
         if (inBowl) return;
-
         StopMotion();
     }
 
@@ -75,30 +87,13 @@ public class FlyingIngredient : MonoBehaviour
 
         if (other.CompareTag("Bowl"))
         {
-            Debug.Log("BOWL DETECTED for ingredient " + ingredientId);
-
             var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
 
             if (playerNetwork != null)
-            {
                 playerNetwork.RPC_IngredientEnterBowl(ingredientId);
-            }
             else
-            {
-                Debug.LogWarning("PlayerNetwork not found, applying locally");
                 ApplyEnterBowl();
-            }
         }
-    }
-
-    public void OnGrabbed()
-    {
-        StopMotion();
-    }
-
-    public void OnReleased()
-    {
-        StopMotion();
     }
 
     private void StopMotion()

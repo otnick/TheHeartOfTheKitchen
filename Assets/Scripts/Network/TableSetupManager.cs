@@ -1,5 +1,7 @@
-using UnityEngine;
 using Fusion;
+using Meta.WitAi.Attributes;
+using UnityEditor;
+using UnityEngine;
 
 public class TableSetupManager : MonoBehaviour
 {
@@ -21,13 +23,13 @@ public class TableSetupManager : MonoBehaviour
         Quaternion spawnRotation = ghostStove.rotation;
 
         var playerNetwork = FindFirstObjectByType<PlayerNetwork>();
-
         if (playerNetwork != null)
         {
-            playerNetwork.RPC_ConfirmTablePlacement(
-                spawnPosition,
-                spawnRotation
-            );
+            playerNetwork.RPC_ConfirmTablePlacement(spawnPosition, spawnRotation);
+        }
+        else
+        {
+            Debug.LogWarning("PlayerNetwork not found!");
         }
     }
 
@@ -37,7 +39,6 @@ public class TableSetupManager : MonoBehaviour
             setupRoot.SetActive(false);
 
         var runner = FindFirstObjectByType<NetworkRunner>();
-
         if (runner == null)
         {
             Debug.LogWarning("NetworkRunner not found!");
@@ -54,7 +55,6 @@ public class TableSetupManager : MonoBehaviour
                 position,
                 rotation
             );
-
             Debug.Log("Spawned GameRoot network prefab");
         }
     }

@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 2731877834359600827}
   - component: {fileID: 3094613422032928980}
   - component: {fileID: 2797036167221032389}
+  - component: {fileID: 2508252803610392296}
   m_Layer: 0
   m_Name: GroundFood
   m_TagString: Food
@@ -260,7 +261,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.138, y: -0.13, z: 0.81}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 0.47, y: 0.47, z: 0.47}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2744049758395912241}
@@ -363,7 +364,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.11659946, y: 0.11659937, z: 0.16928504}
   m_Center: {x: 0.0006125229, y: 0.05207296, z: -0.0036755737}
@@ -384,7 +385,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.04063436, y: 0.030832399, z: 0.26975513}
   m_Center: {x: -0.00061273575, y: 0.052072972, z: -0.002450347}
@@ -515,9 +516,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodItemNetworked
   _DecayProgress: 0
-  _freshColor: {r: 1, g: 1, b: 1, a: 1}
-  _brownColor: {r: 0.4, g: 0.2, b: 0, a: 1}
-  _blackColor: {r: 0, g: 0, b: 0, a: 1}
+  _FreshColor: {r: 0, g: 0, b: 0, a: 0}
+  _BrownColor: {r: 0, g: 0, b: 0, a: 0}
+  _BlackColor: {r: 0, g: 0, b: 0, a: 0}
+  defaultFreshColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultBrownColor: {r: 0.4, g: 0.2, b: 0, a: 1}
+  defaultBlackColor: {r: 0, g: 0, b: 0, a: 1}
   cookingSpeed: 0.005
 --- !u!114 &2797036167221032389
 MonoBehaviour:
@@ -535,6 +539,27 @@ MonoBehaviour:
   breakTorque: 1
   springForce: 34
   _maxTiltAngle: 30
+--- !u!65 &2508252803610392296
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872901807826945667}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: -0.03, z: 0.03}
+  m_Center: {x: 0, y: 0.06, z: 0}
 --- !u!1001 &8144958045370543438
 PrefabInstance:
   m_ObjectHideFlags: 0

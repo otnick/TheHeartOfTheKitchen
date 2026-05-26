@@ -33,6 +33,8 @@ TagManager:
   - Bowl
   - FxTemporaire
   - Knife
+  - Plate
+  - Pan
   layers:
   - Default
   - TransparentFX
