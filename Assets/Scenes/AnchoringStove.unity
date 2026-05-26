@@ -5443,7 +5443,7 @@ MonoBehaviour:
   setupRoot: {fileID: 423291780}
   ghostStove: {fileID: 2019520799}
   gameRootNetworkPrefab:
-    RawGuidValue: 1d2be29e1166d3946b0e66cf4b2aea4b
+    RawGuidValue: 57db73dc839aa5046b6b9948d08937f2
   gameRootOffset: {x: 0.275, y: -0.38, z: 0}
 --- !u!1 &426281355
 GameObject:

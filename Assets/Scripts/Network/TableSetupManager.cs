@@ -1,5 +1,7 @@
-using UnityEngine;
 using Fusion;
+using Meta.WitAi.Attributes;
+using UnityEditor;
+using UnityEngine;
 
 public class TableSetupManager : MonoBehaviour
 {
@@ -35,13 +37,17 @@ public class TableSetupManager : MonoBehaviour
         }
     }
 
+    private bool placementConfirmed = false;
     public void ApplyTablePlacement(Vector3 position, Quaternion rotation)
     {
         if (setupRoot != null)
             setupRoot.SetActive(false);
 
-        var runner = FindFirstObjectByType<NetworkRunner>();
+        if (placementConfirmed)
+            return;
+        placementConfirmed = true;
 
+        var runner = FindFirstObjectByType<NetworkRunner>();
         if (runner == null)
         {
             Debug.LogWarning("NetworkRunner not found!");
@@ -50,15 +56,11 @@ public class TableSetupManager : MonoBehaviour
 
         if (runner.IsServer || runner.IsSharedModeMasterClient)
         {
-            if (spawnedGameRoot != null)
-                return;
-
             spawnedGameRoot = runner.Spawn(
                 gameRootNetworkPrefab,
                 position,
                 rotation
             );
-
             Debug.Log("Spawned GameRoot network prefab");
         }
     }

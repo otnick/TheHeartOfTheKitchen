@@ -25,15 +25,12 @@ public class PlayerNetwork : NetworkBehaviour
         bookActivator.ApplyBookSequence();
     }
 
-    [Rpc(RpcSources.All, RpcTargets.All)]
+    [Rpc(RpcSources.InputAuthority, RpcTargets.All)]
     public void RPC_ConfirmTablePlacement(Vector3 position, Quaternion rotation)
     {
         var setup = FindFirstObjectByType<TableSetupManager>();
-
         if (setup != null)
-        {
             setup.ApplyTablePlacement(position, rotation);
-        }
     }
 
     [Rpc(RpcSources.All, RpcTargets.All)]

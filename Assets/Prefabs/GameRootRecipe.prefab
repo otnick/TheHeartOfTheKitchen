@@ -2310,6 +2310,8 @@ MonoBehaviour:
   brownColor: {r: 0.6132076, g: 0.4168911, b: 0.2285066, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &2233644511963361876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,6 +3913,8 @@ MonoBehaviour:
   brownColor: {r: 0.35, g: 0.16, b: 0.04, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &3267848198209617010
 GameObject:
   m_ObjectHideFlags: 0
@@ -6749,6 +6753,8 @@ MonoBehaviour:
   brownColor: {r: 0.5660378, g: 0.32789683, b: 0.16286935, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &5704461224156432283
 GameObject:
   m_ObjectHideFlags: 0
@@ -8114,6 +8120,8 @@ MonoBehaviour:
   brownColor: {r: 0.35, g: 0.16, b: 0.04, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &6643968172652921677
 GameObject:
   m_ObjectHideFlags: 0
@@ -10004,6 +10012,8 @@ MonoBehaviour:
   brownColor: {r: 0.3101638, g: 0.38679248, b: 0.24630654, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &7613756847009907445
 GameObject:
   m_ObjectHideFlags: 0
@@ -10909,6 +10919,8 @@ MonoBehaviour:
   brownColor: {r: 0.51160026, g: 0.5283019, b: 0.19188322, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &8054486467355131508
 GameObject:
   m_ObjectHideFlags: 0
@@ -11847,6 +11859,8 @@ MonoBehaviour:
   brownColor: {r: 0.40385884, g: 0.41509432, b: 0.107689574, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &8715062908210551810
 GameObject:
   m_ObjectHideFlags: 0
@@ -12459,6 +12473,8 @@ MonoBehaviour:
   brownColor: {r: 0.35, g: 0.16, b: 0.04, a: 1}
   blackColor: {r: 0, g: 0, b: 0, a: 1}
   cutParticlePrefab: {fileID: 141433446842962269, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
+  cutSound: {fileID: 0}
+  cutSoundVolume: 1
 --- !u!1 &8870454471288794351
 GameObject:
   m_ObjectHideFlags: 0
