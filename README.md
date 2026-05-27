@@ -111,7 +111,7 @@ We added this interaction to make the experience feel more immersive and creativ
 
 ---
 
-# Development Process   WE NEED TO IMPROVE HEREEEEEE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Development Process   WE NEED TO IMPROVE HEREEEEEE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 The project was developed in Unity using:
 - Meta XR SDK
@@ -135,7 +135,7 @@ During development, we continuously tested the interactions to make sure they fe
 
 ---
 
-# Challenges and Solutions  ADD HERE TANGIBLE CHALLENGES AND SOLUTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Challenges and Solutions  ADD HERE TANGIBLE CHALLENGES AND SOLUTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 One of the biggest challenges during development was deciding which mechanics should feel realistic and which ones should feel more playful and entertaining. Since the experience was mainly designed for children, we realized that fully realistic cooking interactions were sometimes less engaging than exaggerated physical interactions. Because of this, we focused more on interactions that felt active, fun, and immersive rather than perfectly realistic.
 
