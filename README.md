@@ -18,13 +18,40 @@ The experience is designed especially for children, but it can also be enjoyed b
 
 The project solves the problem of passive or single-player cooking games by making the cooking process collaborative and interactive. Players no longer cook alone. Instead, they coordinate tasks, communicate constantly, and work together throughout the experience. This creates a more engaging and social gameplay experience while also encouraging teamwork and communication.
 
-The project focuses on creating immersive and playful XR interactions that combine hand tracking, collaboration, sound feedback, and mixed reality elements to make cooking feel more active and social.
-
-From an educational perspective, the experience encourages players to communicate, cooperate, and solve tasks together in an active and playful way. Since players must coordinate their actions throughout the cooking process, the experience supports teamwork, communication, collaboration, and problem solving. The game also encourages creativity and hands-on interaction by allowing players to physically grab, move, shape, and prepare objects using hand tracking. Instead of passive gameplay, players stay physically and socially involved in the experience, helping create a more engaging and collaborative learning environment for children.
+From an educational perspective, the experience encourages players to communicate, cooperate, and solve tasks together in an active and playful way. Since players must coordinate their actions throughout the cooking process, the experience supports teamwork, communication, collaboration, and problem solving. The game also encourages creativity and hands-on interaction by allowing players to physically grab, move, and prepare objects using hand tracking. Instead of passive gameplay, players stay physically and socially involved in the experience, helping create a more engaging and collaborative learning environment for children.
 
 ---
 
-# Design Process   
+# Design Process
+
+## Early Concept Development
+
+Before deciding on The Heart of the Kitchen, we explored several different multiplayer XR concepts. The common theme across these ideas was cooperation, communication, and asymmetric gameplay, where players would have different roles and responsibilities.
+
+Some of the early concepts included:
+
+- A two-room puzzle experience where one player acted as an instructor and the other completed tasks based on verbal instructions.
+- A cave exploration scenario where players searched for gold while escaping an incoming cave collapse.
+- Robot building lab
+- Kitchen
+- A church-themed cooperative experience.
+- A flooding scenario where players had to cooperate under time pressure to prevent disaster.
+
+After evaluating these ideas, we decided to focus on a cooking experience because it naturally supports teamwork, communication, physical interaction, and task sharing. Cooking also allowed us to combine playful activities with tangible interactions in a way that felt accessible and easy to understand for first-time XR users.
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/0bd3c174-da3a-4f8f-8bd9-a4d3da383c92"  width="400"/>
+</p>
+
+## Bodystorming
+
+Before creating digital prototypes, we used bodystorming session to explore interaction ideas physically. Team members acted out different scenarios and roles, testing how players could communicate, move, and collaborate inside a shared XR environment.
+
+Through bodystorming, we experimented with several concepts such as giving instructions between separate spaces, passing objects between players, solving tasks together, and using physical actions to affect another player's environment. This session helped us understand which interactions felt natural and engaging before investing time in implementation.
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/54279b51-9f1f-4dc1-9460-df608a571b64"/>
+</p>
 
 ## Planning Phase
 
@@ -42,15 +69,23 @@ Instead of creating a realistic cooking simulator, we intentionally focused on m
 <div align="center">
   <table>
       <tr>
-      <td><img src="https://github.com/user-attachments/assets/54279b51-9f1f-4dc1-9460-df608a571b64" width="320"/></td>
       <td><img src="https://github.com/user-attachments/assets/6435f3de-733d-44e7-bc8a-1eb76709148e" width="320"/></td>
-    </tr>
-     <tr>
-      <td><img src="https://github.com/user-attachments/assets/081fac1a-c221-453c-9963-120e283be1bb" width="320" height="220"/></td>
       <td><img src="https://github.com/user-attachments/assets/e48248e4-b095-402f-8d71-d1cf47a0ee95" width="320"/></td>
     </tr>
   </table>
 </div>
+
+## Asset Research and Environment Planning
+
+During the early stages of development, we also researched available assets that could support our vision for the project. We explored different kitchen environments, food models, sound effects, particle effects, and interaction assets to understand what could realistically be integrated into the experience.
+
+This process helped us refine the scope of the project and influenced several design decisions. For example, the availability of kitchen-related assets supported our decision to move forward with a cooking theme, while the selection of food models and environment assets helped us create a playful and visually appealing atmosphere.
+
+Researching assets early also allowed us to identify which features would need custom implementation, such as the flying ingredient system, recipe interactions, and multiplayer task synchronization.
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/081fac1a-c221-453c-9963-120e283be1bb"/>
+</p>
 
 ---
 
@@ -79,77 +114,56 @@ The Front Zone focuses on delivery and serving interactions. This area contains 
 
 This station-based structure also helped simplify multiplayer interactions because the gameplay flow became clearer and easier to follow inside the shared XR environment.
 
+We chose a station-based layout instead of allowing players to perform all actions in one location because it naturally encourages movement, cooperation, and communication. Players need to move through the kitchen together and understand the sequence of cooking tasks rather than completing everything from a single position.
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0363f94d-e100-4e2c-a4ac-b55199290aa8" width="800">
 </p>
 
 ---
 
-## Interaction Design   ??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+## Interaction Design 
 
 One of the biggest design goals was reducing traditional UI usage. We wanted players to interact directly with the environment instead of constantly opening menus or pressing controller buttons.
 
-Because of this, we designed interactions such as:
-- opening recipe instructions through an animated book
-- grabbing flying ingredients using hand tracking
-- cutting ingredients with a knife
-- carrying bowls and plates with hands
-- serving plates to the customer table
-- turning off kitchen lights using a button
-- following glowing footprints to discover the recipe book
+For this reason, we chose an interactive recipe book instead of a floating menu. A floating menu would have been easier to implement, but it would constantly pull players out of the kitchen environment. By using a physical recipe book, the instructions become part of the world and encourage exploration.
 
-At the beginning of the experience, players first interact with a button inside the kitchen environment. When the button is pressed, the kitchen lights turn off and glowing footprints appear on the floor. Players must follow these footprints to discover the recipe book hidden inside the environment.
+At the beginning of the experience, players press a button that turns off the kitchen lights. This reveals glowing footprints that guide players to the recipe book. We chose this approach because we wanted players to discover the instructions naturally rather than immediately displaying a tutorial screen. This creates a stronger feeling of exploration and curiosity.
 
-After finding the recipe book, players touch the book to open the recipe instructions and learn what tasks they need to complete next. We designed this interaction to replace traditional menus and make the beginning of the experience feel more immersive, interactive, and exploratory inside XR.
+We also decided to use hand tracking instead of controllers. Since the experience is aimed primarily at children, hand tracking felt more intuitive and required less learning. Players can naturally grab ingredients, carry objects, and interact with the environment using familiar hand movements.
 
-We selected hand tracking because it felt more natural and easier to understand, especially for children. During testing, we noticed that players quickly understood interactions when they could physically touch and move objects instead of using abstract button inputs.
-
-Another important interaction combines real-world objects with virtual XR feedback. During one of the cooking tasks, players use real play-doh and physically shape it with their hands. They must flatten the dough, check if it fits the correct hole shape, and place it correctly into the station. After the task is completed, the real interaction transforms into a virtual chicken food object inside the XR environment.
-
-We added this interaction to make the experience feel more immersive and creative for children. Instead of only interacting with virtual objects, players can physically touch and shape a real material and immediately see the result appear inside the virtual world. This creates a stronger connection between physical interaction and XR gameplay.
+Another important design decision was combining physical and virtual interactions through the play-doh task. Instead of only manipulating virtual objects, players physically shape a real material and see the result appear as a virtual chicken inside the XR environment. We chose this interaction because it strengthens the connection between the real and virtual worlds and highlights the unique possibilities of XR experiences.
 
 
 ---
 
-## Development Process   WE NEED TO IMPROVE HEREEEEEE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Development Process
 
-The project was developed in Unity using:
-- Meta XR SDK
-- Photon Fusion networking
-- Oculus Passthrough
-- C# scripting
+We started by creating a basic kitchen environment and testing different interaction ideas. Rather than implementing every feature at once, we focused on building and testing one interaction at a time.
 
-The multiplayer system was built using Photon Fusion so both players could interact inside the same shared kitchen environment. We synchronized gameplay events, object interactions, UI changes, lighting systems, and cooking progress between players.
+The first prototypes focused on core interactions such as grabbing objects, moving ingredients, and creating a simple multiplayer environment. Once the foundation was working, we gradually introduced additional mechanics including flying ingredients, recipe guidance, food preparation tasks, cooking interactions, particle effects, and sound feedback.
 
-We also implemented:
-- floating ingredient systems
-- physics-based interactions
-- play-doh to virtual food interaction
-- cutting ingredients with a knife
-- recipe systems
-- passthrough lighting interactions
-- particle effects
-- sound effects
+The project was developed in Unity using Meta XR SDK, Photon Fusion networking, Oculus Passthrough, and C#. Photon Fusion was used to synchronize gameplay events and object interactions between players in real time. This allowed both players to share the same cooking experience and work toward a common goal.
 
-During development, we continuously tested the interactions to make sure they felt intuitive and physically understandable inside XR.
+Several features evolved significantly during development. For example, the introduction sequence originally relied on direct instructions, but later evolved into an exploration activity where players turn off the lights, follow glowing footprints, and discover the recipe book themselves. Similarly, the cooking tasks became more interactive over time through the addition of hand tracking, cutting interactions, particle effects, and audio feedback.
+
+Throughout development, we continuously tested interactions to evaluate usability, immersion, and collaboration. Testing helped us simplify certain mechanics, improve interaction reliability, and create a more playful and engaging experience.
 
 ---
 
-## Challenges and Solutions  ADD HERE TANGIBLE CHALLENGES AND SOLUTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Challenges and Solutions  ADD HERE OTHER CHALLENGES LIKE TANGIBLE AND SOLUTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-One of the biggest challenges during development was deciding which mechanics should feel realistic and which ones should feel more playful and entertaining. Since the experience was mainly designed for children, we realized that fully realistic cooking interactions were sometimes less engaging than exaggerated physical interactions. Because of this, we focused more on interactions that felt active, fun, and immersive rather than perfectly realistic.
+One of the biggest challenges during development was deciding how realistic the cooking experience should be. We discovered that highly realistic interactions were not always the most engaging. Instead, we focused on creating playful and physically active tasks that encouraged exploration and communication.
 
-Another challenge was keeping the gameplay simple while still making the tasks interesting and collaborative. During early testing, some interactions felt too complicated or required too many instructions. To solve this, we simplified the gameplay flow and focused more on direct hand interaction instead of complex menus or controls.
+Another challenge was maintaining a strong feeling of cooperation. We did not want the experience to feel like two separate players completing individual tasks. To solve this, we designed interactions that required communication and shared progress toward a common cooking goal.
 
-Creating a strong feeling of cooperation was also an important challenge. We did not want the experience to feel like two separate single-player activities happening at the same time. Instead, we wanted players to depend on each other and communicate throughout the cooking process.
+The colocation setup also presented technical challenges. During early testing, players sometimes saw objects in different positions within the shared environment. Since the experience depends heavily on cooperation, this issue had to be resolved before meaningful multiplayer interactions could take place. Through repeated testing and synchronization improvements, we achieved a more stable shared XR space.
 
-One of the most technically challenging parts of the project was creating interactions between virtual and physical objects. During the play-doh task, players physically shape a real object and then see it transform into a virtual food object inside the XR environment. Creating a smooth connection between physical interaction and virtual feedback required a lot of testing to make the interaction feel understandable and immersive.
+Hand tracking was another challenge throughout development. Some interactions became unreliable when users moved too quickly or performed unexpected gestures. Rather than relying on complex gesture recognition, we simplified interactions to grabbing, touching, carrying, and placing objects. This made the experience easier to understand and significantly improved stability.
 
-Another challenge was the colocation setup. In the beginning, the colocation system did not work reliably, and players sometimes saw objects in different positions inside the shared environment. Because the experience depends heavily on cooperation and shared interaction, it was important that both players saw the same kitchen layout and object positions. To improve this, we tested the shared space setup multiple times, adjusted synchronization behavior, and improved networking communication until the environment became more stable and consistent between both headsets.
+Physics interactions also required several iterations. Ingredients sometimes clipped through hands, collided unpredictably, or behaved inconsistently in multiplayer sessions. We addressed these issues by adjusting rigidbody settings, collision handling, and interaction logic until the objects behaved more naturally.
 
-We also faced challenges with hand tracking and physics interactions. Some objects behaved unexpectedly, clipped through hands, or moved incorrectly during multiplayer synchronization. To improve this, we adjusted rigidbody settings, improved collision handling, and simplified some interactions to make them more stable and reliable inside XR.
-
-Throughout the project, many design decisions evolved based on testing and interaction feedback. Over time, the systems became simpler, more physical, and more playful compared to the original prototype ideas.
+These challenges helped shape the final experience. Many features evolved through testing and refinement, resulting in a project that became simpler, more intuitive, and more collaborative than the original concepts.
 
 ---
 
@@ -160,6 +174,10 @@ The Heart of the Kitchen combines multiplayer cooperation, XR interaction, hand 
 ## Core Features
 
 ### Multiplayer XR Cooking Experience
+
+The Heart of the Kitchen was designed as a shared multiplayer XR experience where players work together toward a common goal. Using Photon Fusion networking and colocation, both players can interact within the same kitchen environment, synchronize actions in real time, and complete cooking tasks collaboratively.
+
+Features:
 - shared multiplayer kitchen
 - real-time synchronization using Photon Fusion
 - collaborative cooking tasks
@@ -168,9 +186,10 @@ The Heart of the Kitchen combines multiplayer cooperation, XR interaction, hand 
 ---
 
 ### Hand Tracking Interaction
-Players interact mainly using their hands instead of controllers.
 
-Players can:
+Instead of relying on controllers, players interact with the environment using natural hand movements. This makes the experience more accessible for children and creates a stronger feeling of immersion.
+
+Features:
 - grab ingredients
 - hold objects
 - carry bowls and plates
@@ -181,11 +200,23 @@ Players can:
 
 ### Interactive Beginning System
 
+Features:
 - players press a button to turn off the lights
 - glowing footprints appear
 - players follow the footprints
 - players discover the recipe book
 - touching the recipe book starts the recipe instructions
+
+SCREENSHOT HERE
+
+---
+
+### Recipe and Instruction System
+
+Features:
+- recipe book interaction
+- recipe page instructions
+- world-space XR UI
 
 SCREENSHOT HERE
 
@@ -211,27 +242,8 @@ Features:
 
 ---
 
-### Real and Virtual Interaction Combination
-Players:
-1. use real play-doh
-2. shape it with their hands
-3. place it into the correct hole
-4. trigger a virtual chicken food object inside XR
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="https://github.com/user-attachments/assets/7e8a35a0-656e-4da8-a0be-e50c3cb6078e" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/47a5097d-e121-4af3-b39e-2b109408e1fa" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/042a1976-617c-4c8f-92b7-69e3118bc845" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/2ae7dfb7-435a-4ca9-a603-b4283c66bf78" width="220"/></td>
-    </tr>
-  </table>
-</div>
-
----
-
 ### Knife Cutting Interaction
+
 Features:
 - knife collision interaction
 - ingredient transformation system
@@ -251,6 +263,7 @@ Features:
 ---
 
 ### Cooking System
+
 Features:
 - stove interaction
 - cooking interactions
@@ -263,37 +276,41 @@ Features:
 
 ---
 
-### Recipe and Instruction System
-Features:
-- recipe book interaction
-- recipe page instructions
-- world-space XR UI
+### Real and Virtual Interaction Combination
 
-SCREENSHOT HERE
+Players:
+1. use real play-doh
+2. shape it with their hands
+3. place it into the correct hole
+4. trigger a virtual chicken food object inside XR
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/7e8a35a0-656e-4da8-a0be-e50c3cb6078e" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/47a5097d-e121-4af3-b39e-2b109408e1fa" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/042a1976-617c-4c8f-92b7-69e3118bc845" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/2ae7dfb7-435a-4ca9-a603-b4283c66bf78" width="220"/></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
 ### Dynamic Audio Feedback
+
+Audio feedback is used throughout the experience to make interactions feel more responsive and immersive. Different sounds help players understand when actions have been completed successfully and provide feedback during cooking activities.
+
 Features:
-- ambient kitchen sounds
 - cutting sounds
 - cooking sounds
 - background music
-- interaction sound feedback
+
+The background music also helps create a playful atmosphere while players work together to complete the recipe.
 
 ---
 
-### Passthrough and XR Environment
-Features:
-- passthrough lighting changes
-- mixed reality interaction
-- XR environmental immersion
-
-SCREENSHOT HERE
-
----
-
-# Demo / Video
+### Demo / Video
 
 PROJECT DEMO LINK HERE
 
