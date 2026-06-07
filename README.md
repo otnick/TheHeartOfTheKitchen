@@ -221,8 +221,8 @@ Features:
 <div align="center">
   <table>
       <tr>
-      <td><img src="https://github.com/user-attachments/assets/289153d0-8fca-4d3a-a7f6-2d45d37ef8ff" width="320"/></td>
-      <td><img src="https://github.com/user-attachments/assets/a8d9737e-239f-4631-8fc3-c78668a9ba49" width="320"/></td>
+      <td><img src="https://github.com/user-attachments/assets/289153d0-8fca-4d3a-a7f6-2d45d37ef8ff" height="220" width="200"/></td>
+      <td><img src="https://github.com/user-attachments/assets/a8d9737e-239f-4631-8fc3-c78668a9ba49" height="220" width="200"/></td>
     </tr>
   </table>
 </div>
