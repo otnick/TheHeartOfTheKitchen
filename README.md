@@ -207,8 +207,6 @@ Features:
 - players discover the recipe book
 - touching the recipe book starts the recipe instructions
 
-SCREENSHOT HERE
-
 ---
 
 ### Recipe and Instruction System
