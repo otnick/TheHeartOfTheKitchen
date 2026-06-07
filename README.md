@@ -151,7 +151,7 @@ Throughout development, we continuously tested interactions to evaluate usabilit
 
 ---
 
-## Challenges and Solutions  ADD HERE OTHER CHALLENGES LIKE TANGIBLE AND SOLUTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## Challenges and Solutions
 
 One of the biggest challenges during development was deciding how realistic the cooking experience should be. We discovered that highly realistic interactions were not always the most engaging. Instead, we focused on creating playful and physically active tasks that encouraged exploration and communication.
 
