@@ -332,6 +332,14 @@ ADD USAGE HERE
 
 ADD REFERENCES HERE
 
+- https://assetstore.unity.com/packages/3d/environments/kitchen-creation-kit-2854
+- https://assetstore.unity.com/packages/3d/props/clothing/ultra-low-poly-animated-angel-wings-157913
+- https://assetstore.unity.com/packages/3d/props/food/pandazole-kitchen-food-low-poly-pack-204525
+- https://assetstore.unity.com/packages/3d/environments/coffee-shop-environment-217600
+- https://assetstore.unity.com/packages/vfx/particles/cartoon-fx-remaster-free-109565
+- https://sketchfab.com/3d-models/alchemical-book-25ea2f17700e4f1ab9dc38b3fcaaba0b
+- https://sketchfab.com/3d-models/bar-5db4a3bc2e7e4150b1eba1a466bcf37c
+- https://sketchfab.com/3d-models/flying-magic-book-95ee5c76e08442a5ad00e2b02a8270b9
 ---
 
 # Contributors
