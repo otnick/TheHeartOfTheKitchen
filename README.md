@@ -319,25 +319,80 @@ The background music also helps create a playful atmosphere while players work t
 
 ### Demo / Video
 
-PROJECT DEMO LINK HERE
+[https://drive.google.com/file/d/1AOIZ0XfZ0Fhjsh6aoL8aFWP0zL2BXznL/view](https://drive.google.com/file/d/1AOIZ0XfZ0Fhjsh6aoL8aFWP0zL2BXznL/view)
 
 ---
 
 # Installation
 
-ADD INSTALLATION HERE
+## Requirements
+
+To install the application you will need: 
+- Unity 6000.3.10f1, downloadable from [https://unity.com/releases/editor/whats-new/6000.3.10f1#installs](here)  
+- Arduino IDE to upload the .ino file to your esp32 (More about that later). Download [https://www.arduino.cc/en/software/](here)
+- Meta Quest Developer Hub (MQDH). Download for mac [https://developers.meta.com/horizon/downloads/package/oculus-developer-hub-mac/](here), for Windows [https://developers.meta.com/horizon/downloads/package/oculus-developer-hub-win/](here)
+- A force sensing resistor
+- An ESP32
+- Jumper Cables for quick arduino development
+- a 3.3k Ohm Resistor
+- Python Websocket Server from [https://gitea.dsv.su.se/ExtralityLab/tangible-interaction/src/branch/main/Websockets-Communication](here)
+
+## Step-By-Step 
+
+### Building and Uploading to headset.
+
+1. Clone this git repository using  
+```
+git clone https://github.com/otnick/TheHeartOfTheKitchen.git
+```
+2. Open the folder holding the repository with the required Unity Version.
+3. Wait for all assets and dependencies to import. If something fails try re-importing all packages.
+4. Open the WebSocketClientExample.cs under Assets/Scripts/ and change the correct fields to your server IP.
+5. In Unity Editor press on File -> Build Settings.
+6. Make sure your Build Target is Android
+7. Make sure you build only the Scene called "Anchoring Stove".
+8. Build and call it something you will remember Like "TheHeartOfTheKitchen.apk"
+9. Upload the .apk file to your headset using MQDH.
+
+### Uploading to ESP32.
+
+1. Open Arduino IDE
+2. Open the folder under ./Assets/9DOF_Kitchen as a Arduino IDE Project
+3. Change the correct fields to match your wifi and server IP.
+4. Connect your ESP32
+5. Upload the Code to your ESP32
+6. Connect the circuit. <img width="798" height="628" alt="Screenshot 2026-06-07 at 21 49 17" src="https://github.com/user-attachments/assets/bf4852a1-15bc-4923-b954-564a4837232e" />
+
+
 
 ---
 
 # Usage
 
-ADD USAGE HERE
+## Starting up the Experience
+
+1. Start the Python Websocket Server.
+2. Make sure to start the game 2steps back from a spot where you would like your kitchen stove to stop.
+3. Wait untill the Spatial Anchor appears (see in the following picture).
+2. Make sure to allign your table/ counter edge to the edge of the 'ghost stove' see picture <img width="490" height="699" alt="Screenshot 2026-06-07 at 21 46 49" src="https://github.com/user-attachments/assets/f6b01e3f-4a05-4aeb-9c9b-6e148edc530c" />
+
+
+3. When you are ready to start walk into or touch the pinkish cube.
+
+
+## Tips for a better experience
+
+1. If you are playing without a 'guide' (a person who knows how the game works and what you can do) you can refer to the recipe. (To find the recipe turn off the lights and follow the footprints). The light switch can be a bit finnicky, it works via Ray Interactions, so try to make a ray appear onto the light switch, then use the 'Pinch' Interaction to activate and deactivate. Honestly you should activate the recipe regardless if you know or don't know how to play the game, since the music that spawns with the recipe adds ambience and 'a vibe'.
+2. Make sure to use 'Pinch Interactions' when grabbing items.
+3. Use ***only one*** controller throughout the experience. The right handed controller as well.  
+The player who uses the headset that owns the controller wont be able to grab things with their right hand. Keep that in mind.  
+**This controller is used as tracking the pan**
+4. When it comes to handling food on top of objects, like veggies on a pan - Physics are very hard to control so here are a couple tips. The vertical movement has to be very slow, otherwise the objects will fall through objects they are lying on (e.g pan, plate, bowl). Lateral movement is better, but it still is slippery on purpose. 
+5. Using the ESP32 should be done with a specific 'physical concoction', you won't have it available, so make up your own way of using the force sensor, maybe its a kneading pad or a meat grinder or something around those lines. Essentially, when the force sensor is pressed, it will spawn 2 hunks of meat. 
 
 ---
 
 # References
-
-ADD REFERENCES HERE
 
 - https://assetstore.unity.com/packages/3d/environments/kitchen-creation-kit-2854
 - https://assetstore.unity.com/packages/3d/props/clothing/ultra-low-poly-animated-angel-wings-157913
@@ -347,9 +402,17 @@ ADD REFERENCES HERE
 - https://sketchfab.com/3d-models/alchemical-book-25ea2f17700e4f1ab9dc38b3fcaaba0b
 - https://sketchfab.com/3d-models/bar-5db4a3bc2e7e4150b1eba1a466bcf37c
 - https://sketchfab.com/3d-models/flying-magic-book-95ee5c76e08442a5ad00e2b02a8270b9
+- https://freesound.org/people/newlocknew/sounds/536838/
+- https://freesound.org/people/mshahen/sounds/185446/
+- https://assetstore.unity.com/packages/3d/props/food/low-poly-food-asset-pack-351874
+- extrality lab with their https://gitea.dsv.su.se/ExtralityLab/tangible-interaction/src/branch/main/Websockets-Communication
+
 ---
 
 # Contributors
+Nick Otis Schumacher - nickschumacher10@gmail.com
+Esma Nur Yücel - nur.yuccel@gmail.com
+Kipras Klimkevicius - kipras.klim@gmail.com
+Muhammad Naveed - muna1366@student.su.se
 
-ADD CONTRIBUTORS HERE
 
