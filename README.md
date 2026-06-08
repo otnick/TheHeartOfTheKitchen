@@ -1,8 +1,9 @@
 # The Heart of the Kitchen
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/46d60128-92f7-4fd6-ab28-e87684b5a9c9" width="400">
+  <img src="https://github.com/user-attachments/assets/1da1f192-bda6-4cd9-a71b-3ab1b4ca894c" width="400">
 </p>
+
 
 > “Are you tired of cooking food alone? Bring a friend and cook together in a fun XR kitchen adventure!”
 
@@ -50,8 +51,9 @@ Before creating digital prototypes, we used bodystorming session to explore inte
 Through bodystorming, we experimented with several concepts such as giving instructions between separate spaces, passing objects between players, solving tasks together, and using physical actions to affect another player's environment. This session helped us understand which interactions felt natural and engaging before investing time in implementation.
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/54279b51-9f1f-4dc1-9460-df608a571b64"/>
+<img src="https://github.com/user-attachments/assets/cea86133-70b4-487a-a144-edd54f0599aa"/>
 </p>
+
 
 ## Planning Phase
 
@@ -69,11 +71,12 @@ Instead of creating a realistic cooking simulator, we intentionally focused on m
 <div align="center">
   <table>
       <tr>
-      <td><img src="https://github.com/user-attachments/assets/6435f3de-733d-44e7-bc8a-1eb76709148e" width="320"/></td>
-      <td><img src="https://github.com/user-attachments/assets/e48248e4-b095-402f-8d71-d1cf47a0ee95" width="320"/></td>
+      <td><img src="https://github.com/user-attachments/assets/4d00b772-232c-430a-a9e9-d65c84e9c52f" width="320"/></td>
+      <td><img src="https://github.com/user-attachments/assets/82bb858c-5c38-4cd5-9c0b-faf9c9ac571b" width="320"/></td>
     </tr>
   </table>
 </div>
+
 
 ## Asset Research and Environment Planning
 
@@ -84,7 +87,7 @@ This process helped us refine the scope of the project and influenced several de
 Researching assets early also allowed us to identify which features would need custom implementation, such as the flying ingredient system, recipe interactions, and multiplayer task synchronization.
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/081fac1a-c221-453c-9963-120e283be1bb"/>
+<img src="https://github.com/user-attachments/assets/c7b62011-51a8-465a-a930-d4efae8e6c33"/>
 </p>
 
 ---
@@ -117,7 +120,7 @@ This station-based structure also helped simplify multiplayer interactions becau
 We chose a station-based layout instead of allowing players to perform all actions in one location because it naturally encourages movement, cooperation, and communication. Players need to move through the kitchen together and understand the sequence of cooking tasks rather than completing everything from a single position.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0363f94d-e100-4e2c-a4ac-b55199290aa8" width="800">
+  <img src="https://github.com/user-attachments/assets/817b6f1d-9bf4-4e13-bf96-92d4d7486a58" width="800">
 </p>
 
 ---
@@ -239,8 +242,8 @@ Features:
 <div align="center">
   <table>
       <tr>
-      <td><img src="https://github.com/user-attachments/assets/c01ed3a8-a719-4e43-a7da-d5ec98a7edc7" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/6570b160-bbd9-4188-a7b3-c3ffdb4d7d20" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/e48a0915-f7c6-4f6f-b035-6afbd8ee870f" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/0ecca678-f895-48ce-bfc5-63c2b6d30b3a" width="220"/></td>
     </tr>
   </table>
 </div>
@@ -259,8 +262,8 @@ Features:
 <div align="center">
   <table>
     <tr>
-      <td><img src="https://github.com/user-attachments/assets/40b7ccce-7491-486b-9125-4d6e9c247e96" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/7d8f9a20-5339-4eb1-a943-58c007cea784" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/f3e2ef93-c41c-47a0-ae1b-6adddc07105c" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/709e8623-b962-4f6a-becf-868c49c66618" width="220"/></td>
     </tr>
   </table>
 </div>
@@ -276,7 +279,7 @@ Features:
 - particle effects during cooking
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1b58c3f7-fd7f-48a3-97cd-02b86412f157" width="400">
+  <img src="https://github.com/user-attachments/assets/4b4c77cc-5b49-420c-bf1a-a3d6cc89b4a7" width="400">
 </p>
 
 ---
@@ -292,10 +295,10 @@ Players:
 <div align="center">
   <table>
     <tr>
-      <td><img src="https://github.com/user-attachments/assets/7e8a35a0-656e-4da8-a0be-e50c3cb6078e" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/47a5097d-e121-4af3-b39e-2b109408e1fa" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/042a1976-617c-4c8f-92b7-69e3118bc845" width="220"/></td>
-      <td><img src="https://github.com/user-attachments/assets/2ae7dfb7-435a-4ca9-a603-b4283c66bf78" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/4da68e92-e1f5-48ce-adf8-60f3fe31679a" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/8d3bc670-c5bb-46d6-98a3-a23a63e3a19d" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/9dfa7240-adaf-421f-8514-2089eed77cd9" width="220"/></td>
+      <td><img src="https://github.com/user-attachments/assets/8c353fd8-76ac-4d9f-9056-2ecd562cb424" width="220"/></td>
     </tr>
   </table>
 </div>
